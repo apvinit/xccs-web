@@ -21,6 +21,7 @@ import { HomeModule } from './home/home.module';
 import { CoursesModule } from './courses/courses.module';
 import { TimeTableModule } from './time-table/time-table.module';
 import { GalleryModule } from './gallery/gallery.module';
+import { ContactModule } from './contact/contact.module';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { GalleryModule } from './gallery/gallery.module';
     CoursesModule,
     TimeTableModule,
     GalleryModule,
+    ContactModule,
     AppRoutingModule
   ],
   providers: [],
