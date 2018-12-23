@@ -18,6 +18,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { AboutModule } from './about/about.module';
 import { AdminModule } from './admin/admin.module';
 import { HomeModule } from './home/home.module';
+import { CoursesModule } from './courses/courses.module';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { HomeModule } from './home/home.module';
     AboutModule,
     AdminModule,
     HomeModule,
+    CoursesModule,
     AppRoutingModule
   ],
   providers: [],
