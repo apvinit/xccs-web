@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FirebaseService } from 'src/app/firebase.service';
+import { Info } from '../../model/info';
 
 @Component({
   selector: 'app-about',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private firebase : FirebaseService) { }
+  info : Info;
   ngOnInit() {
+    this.firebase.getInfo().subscribe((info : Info) => {
+      this.info = info;
+    });
   }
+
 
 }
