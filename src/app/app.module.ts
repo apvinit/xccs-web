@@ -26,10 +26,10 @@ import { AdminModule } from './admin/admin.module'
     BrowserModule,
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AppRoutingModule,
     MatToolbarModule,
     AboutModule,
-    AdminModule
+    AdminModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
