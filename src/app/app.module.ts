@@ -20,6 +20,7 @@ import { AdminModule } from './admin/admin.module';
 import { HomeModule } from './home/home.module';
 import { CoursesModule } from './courses/courses.module';
 import { TimeTableModule } from './time-table/time-table.module';
+import { GalleryModule } from './gallery/gallery.module';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { TimeTableModule } from './time-table/time-table.module';
     HomeModule,
     CoursesModule,
     TimeTableModule,
+    GalleryModule,
     AppRoutingModule
   ],
   providers: [],
