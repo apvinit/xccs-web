@@ -9,8 +9,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFireModule } from '@angular/fire'
 import { environment } from 'src/environments/environment';
 
+import { MatToolbarModule } from '@angular/material/toolbar';
 // Feature Modules
-import { LayoutModule } from './layout/layout.module';
+import { AboutModule } from './about/about.module'
 
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component'
 
@@ -23,8 +24,9 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     BrowserModule,
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebase),
-    LayoutModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatToolbarModule,
+    AboutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
