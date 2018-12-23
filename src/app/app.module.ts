@@ -10,7 +10,7 @@ import { AngularFireModule } from '@angular/fire'
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from 'src/environments/environment';
 
-import { MatToolbarModule } from '@angular/material/toolbar';
+import { MaterialModule } from './material.module'
 
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
@@ -28,7 +28,7 @@ import { AdminModule } from './admin/admin.module'
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
-    MatToolbarModule,
+    MaterialModule,
     AboutModule,
     AdminModule,
     AppRoutingModule
