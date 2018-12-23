@@ -10,10 +10,12 @@ import { AngularFireModule } from '@angular/fire'
 import { environment } from 'src/environments/environment';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
+
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+
 // Feature Modules
 import { AboutModule } from './about/about.module'
-
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component'
+import { AdminModule } from './admin/admin.module'
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     AngularFireModule.initializeApp(environment.firebase),
     AppRoutingModule,
     MatToolbarModule,
-    AboutModule
+    AboutModule,
+    AdminModule
   ],
   providers: [],
   bootstrap: [AppComponent]
