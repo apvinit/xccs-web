@@ -15,8 +15,9 @@ import { MaterialModule } from './material.module'
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 // Feature Modules
-import { AboutModule } from './about/about.module'
-import { AdminModule } from './admin/admin.module'
+import { AboutModule } from './about/about.module';
+import { AdminModule } from './admin/admin.module';
+import { HomeModule } from './home/home.module';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { AdminModule } from './admin/admin.module'
     MaterialModule,
     AboutModule,
     AdminModule,
+    HomeModule,
     AppRoutingModule
   ],
   providers: [],
