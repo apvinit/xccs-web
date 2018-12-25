@@ -5,10 +5,11 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AdminRoutingModule } from './admin-routing.module';
 import { AdminComponent } from './admin/admin.component';
 import { MaterialModule } from '../material.module';
-import { AddCourseComponent } from './add-course/add-course.component'
+import { AddCourseComponent } from './add-course/add-course.component';
+import { AddTimeTableComponent } from './add-time-table/add-time-table.component'
 
 @NgModule({
-  declarations: [AdminComponent, AddCourseComponent],
+  declarations: [AdminComponent, AddCourseComponent, AddTimeTableComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,
