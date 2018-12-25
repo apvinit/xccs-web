@@ -3,48 +3,51 @@
       <div class="col">
         <mat-card>
           <mat-card-title>Add Courses Offered</mat-card-title>
+
+          <form [formGroup]="courseForm" (ngSubmit)="addCourse()">
+            <mat-form-field class="w-100">
+              <input type="text" matInput placeholder="Programme Code" formControlName="programme_code" required>
+            </mat-form-field> <br>
+    
+            <mat-form-field class="w-100">
+              <input type="text" matInput placeholder="Programme Name" formControlName="programme_name" required>          
+            </mat-form-field> <br>
+    
+            <mat-form-field class="w-100">
+              <input type="text" matInput placeholder="Minimum Duration" formControlName="min_duration" required>
+            </mat-form-field> <br>
+    
+            <mat-form-field class="w-100">
+              <input type="text" matInput placeholder="Maximum Duration" formControlName="max_duration" required>
+            </mat-form-field> <br>
+    
+            <mat-form-field class="w-100">
+              <input type="text" matInput placeholder="Course Fee" formControlName="course_fee" required>
+            </mat-form-field> <br>
+    
+            <mat-form-field class="w-100">
+              <input type="text" matInput placeholder="Minimun Age" formControlName="min_age" required>
+            </mat-form-field> <br>
+    
+            <mat-form-field class="w-100">
+              <input type="text" matInput placeholder="Maximum Age" formControlName="max_age" required>
+            </mat-form-field> <br>
+    
+            <mat-form-field class="w-100" >
+              <input type="text" matInput placeholder="Eligibility" formControlName="eligibility" required>  
+            </mat-form-field> <br>
+    
+            <mat-form-field class="w-100" >
+              <textarea matInput name="" id="" cols="30" rows="10" placeholder="Info" formControlName="info" required></textarea>
+            </mat-form-field> <br>
+    
+            <mat-form-field class="w-100">
+              <textarea matInput name="" id="" cols="30" rows="10" placeholder="Description" formControlName="description" required></textarea>
+            </mat-form-field>
+    
+            <button mat-raised-button color="primary" type="submit" [disabled]="!courseForm.valid">ADD</button>
+          </form>
   
-          <mat-form-field class="w-100">
-            <input type="text" matInput placeholder="Programme Code">
-          </mat-form-field> <br>
-  
-          <mat-form-field class="w-100">
-            <input type="text" matInput placeholder="Programme Name">          
-          </mat-form-field> <br>
-  
-          <mat-form-field class="w-100">
-            <input type="text" matInput placeholder="Minimum Duration">
-          </mat-form-field> <br>
-  
-          <mat-form-field class="w-100">
-            <input type="text" matInput placeholder="Maximum Duration">
-          </mat-form-field> <br>
-  
-          <mat-form-field class="w-100">
-            <input type="text" matInput placeholder="Course Fee">
-          </mat-form-field> <br>
-  
-          <mat-form-field class="w-100">
-            <input type="text" matInput placeholder="Minimun Age">
-          </mat-form-field> <br>
-  
-          <mat-form-field class="w-100">
-            <input type="text" matInput placeholder="Maximum Age">
-          </mat-form-field> <br>
-  
-          <mat-form-field class="w-100">
-            <input type="text" matInput placeholder="Eligibility">          
-          </mat-form-field> <br>
-  
-          <mat-form-field class="w-100">
-            <textarea matInput name="" id="" cols="30" rows="10" placeholder="Info"></textarea>
-          </mat-form-field> <br>
-  
-          <mat-form-field class="w-100">
-            <textarea matInput name="" id="" cols="30" rows="10" placeholder="Description"></textarea>
-          </mat-form-field>
-  
-          <button mat-raised-button color="primary">ADD</button>
         </mat-card>
       </div>
     </div>
