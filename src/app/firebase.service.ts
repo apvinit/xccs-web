@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreDocument, AngularFirestoreCollection } from '@angular/fire/firestore'
 import { Observable } from 'rxjs';
 import { Info } from './model/info';
+import { Course } from './model/Course';
 
 
 @Injectable({
@@ -21,5 +22,15 @@ export class FirebaseService {
   getInfo(){
     this.info = this.infoRef.valueChanges();
     return this.info;
+  }
+
+  getCoursesOffered() {
+
+  }
+
+  addCourse(course : Course){
+    this.firestore.collection<Course>('courses').add(course)
+      .then((docref) => console.log("Added successfully with ref = " + docref.id))
+      .catch((error) => console.log("Error Creating Document"));
   }
 }
