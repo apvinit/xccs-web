@@ -1,4 +1,4 @@
-<mat-progress-bar *ngIf="!courses$ | async" mode="query"></mat-progress-bar>
+<mat-progress-bar *ngIf="(courses$ | async) === null" mode="query"></mat-progress-bar>
 <div class="container-fluid mx-0">
   <div class="row mt-4 justify-content-center">
     <div class="col-lg-8">
