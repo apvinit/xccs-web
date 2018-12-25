@@ -24,8 +24,8 @@ export class FirebaseService {
     return this.info;
   }
 
-  getCoursesOffered() {
-
+  getCoursesOffered():Observable<Course[]> {
+    return this.firestore.collection<Course>('courses').valueChanges();
   }
 
   addCourse(course : Course){
