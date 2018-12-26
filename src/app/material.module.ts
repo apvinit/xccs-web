@@ -11,6 +11,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatDividerModule} from '@angular/material/divider';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   declarations: [],
@@ -26,7 +27,8 @@ import {MatDividerModule} from '@angular/material/divider';
     MatIconModule,
     MatTabsModule,
     MatProgressBarModule,
-    MatDividerModule
+    MatDividerModule,
+    MatSelectModule
   ],
   exports : [
     MatToolbarModule,
@@ -40,7 +42,8 @@ import {MatDividerModule} from '@angular/material/divider';
     MatIconModule,
     MatTabsModule,
     MatProgressBarModule,
-    MatDividerModule
+    MatDividerModule,
+    MatSelectModule
   ]
 })
 export class MaterialModule { }
