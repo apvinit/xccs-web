@@ -59,7 +59,7 @@ export class FirebaseService {
                                       .catch((error) => console.log("Error : Adding Timetable"));
   }
 
-  getTimeTablePrograms() : Observable<Program[]>{
+  getTimeTable() : Observable<Program[]>{
     
     //using vanilla firebse method
     /* this.firestore.collection("timetable").get().subscribe((querySnapshot) => {
@@ -73,10 +73,22 @@ export class FirebaseService {
     return this.firestore.collection('timetable').snapshotChanges().pipe(
       map( actions => actions.map(a => {
         const id = a.payload.doc.id;
+        const theory = this.getTheoryTimeTable(id);
+        const practical = this.getPracticalTimeTable(id);
         const data = a.payload.doc.data() as { name : string};
-        return { id, ...data }
+        return { id, ...data, theory, practical }
       }))
     )
+  }
+
+  getTheoryTimeTable(id:string){
+    let theoryRef = this.firestore.collection('timetable').doc(id).collection('Theory');
+    return theoryRef.valueChanges();
+  }
+
+  getPracticalTimeTable(id:string){
+    let practicalRef = this.firestore.collection('timetable').doc(id).collection('Practical');
+    return practicalRef.valueChanges();
   }
 
 }
