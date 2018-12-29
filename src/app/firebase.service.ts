@@ -3,8 +3,10 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreDocument, AngularFirestoreCollection } from '@angular/fire/firestore'
 import { AngularFireStorage, AngularFireUploadTask, AngularFireStorageReference } from '@angular/fire/storage';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators'
 import { Info } from './model/info';
 import { Course } from './model/Course';
+import { Program } from './model/program';
 
 
 @Injectable({
@@ -55,6 +57,26 @@ export class FirebaseService {
                                       .doc(content.semester).set({ url : content.url})
                                       .then((docref) => {console.log("Added successfully")})
                                       .catch((error) => console.log("Error : Adding Timetable"));
+  }
+
+  getTimeTablePrograms() : Observable<Program[]>{
+    
+    //using vanilla firebse method
+    /* this.firestore.collection("timetable").get().subscribe((querySnapshot) => {
+      querySnapshot.forEach(doc => {
+          // doc.data() is never undefined for query doc snapshots
+          console.log(doc.id, " => ", doc.data());
+      });
+    }); */
+
+    // using angularFire2 method
+    return this.firestore.collection('timetable').snapshotChanges().pipe(
+      map( actions => actions.map(a => {
+        const id = a.payload.doc.id;
+        const data = a.payload.doc.data() as { name : string};
+        return { id, ...data }
+      }))
+    )
   }
 
 }
