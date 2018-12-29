@@ -1,17 +1,15 @@
 <div class="container pt-4">
   <div class="row">
     <div class="col-lg-4">
-        <mat-card class="mb-4">
+        <mat-card class="mb-4" *ngFor="let event of events | async">
           <mat-card-header>
-            <mat-card-title>Shiba Ifu</mat-card-title>
-            <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+            <mat-card-title>{{event.title}}</mat-card-title>
+            <mat-card-subtitle>{{event.subtitle}}</mat-card-subtitle>
           </mat-card-header>
           <mat-card-content>
-              <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+              <img mat-card-image [src]="event.thumbnail">
               <p>
-                The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-                A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-                bred for hunting.
+                {{event.description}}
               </p>
             </mat-card-content>
           <mat-card-actions align="end">
