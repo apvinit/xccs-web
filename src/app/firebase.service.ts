@@ -43,11 +43,8 @@ export class FirebaseService {
     return this.storage.ref(path);
   }
 
-  uploadFile(path, event) : AngularFireUploadTask{
-    const filePath = path;
-    const file = event.target.files[0];
-
-    return this.storage.upload(filePath, file);
+  uploadFile(path, file) : AngularFireUploadTask{
+    return this.storage.upload(path, file);
   }
 
   addTimeTable(id, content){ 
