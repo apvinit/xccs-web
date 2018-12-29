@@ -1,7 +1,7 @@
-export interface Event {
+export interface Event_ {
     title : string;
     subtitle : string;
-    thumbnail : string;
+    thumbnail? : string;
     description ? : string;
     images : string[];
 }
