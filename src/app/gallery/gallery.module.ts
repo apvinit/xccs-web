@@ -3,12 +3,14 @@ import { CommonModule } from '@angular/common';
 
 import { GalleryRoutingModule } from './gallery-routing.module';
 import { GalleryComponent } from './gallery/gallery.component';
+import { MaterialModule } from '../material.module';
 
 @NgModule({
   declarations: [GalleryComponent],
   imports: [
     CommonModule,
-    GalleryRoutingModule
+    GalleryRoutingModule,
+    MaterialModule
   ]
 })
 export class GalleryModule { }
