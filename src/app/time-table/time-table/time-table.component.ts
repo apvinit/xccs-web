@@ -12,10 +12,11 @@ export class TimeTableComponent implements OnInit {
 
   timetablePrograms : Observable<Program[]>;
 
+
   constructor(private firebaseService : FirebaseService) { }
 
   ngOnInit() {
-    this.timetablePrograms =  this.firebaseService.getTimeTablePrograms();
+    this.timetablePrograms =  this.firebaseService.getTimeTable();
   }
 
 }

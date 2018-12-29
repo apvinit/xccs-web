@@ -17,56 +17,16 @@
             <mat-tab-group mat-align-tabs="center" animationDuration="400ms">
               <mat-tab label="Theory"> 
                 <mat-list class="justify-content-center">
-                  <mat-list-item>
-                    Semester 1
-                  </mat-list-item>
-                  <mat-divider></mat-divider>
-                  <mat-list-item>
-                    Semester 2
-                  </mat-list-item>
-                  <mat-divider ></mat-divider>
-                  <mat-list-item>
-                    Semester 3
-                  </mat-list-item>
-                  <mat-divider></mat-divider>
-                  <mat-list-item>
-                    Semester 4
-                  </mat-list-item>
-                  <mat-divider></mat-divider>
-                  <mat-list-item>
-                    Semester 5
-                  </mat-list-item>
-                  <mat-divider></mat-divider>
-                  <mat-list-item>
-                    Semester 6
+                  <mat-list-item *ngFor="let item of program.theory | async; let i = index;">
+                    <a mat-button color="primary" [href]="item.url">{{program.id}} : Semester {{i + 1}} Theory</a>
                   </mat-list-item>
                 </mat-list>
               </mat-tab>
               <mat-tab label="Practical">
                 <mat-list>
-                  <mat-list-item>
-                    Semester 1
-                  </mat-list-item>
-                  <mat-divider></mat-divider>
-                  <mat-list-item>
-                    Semester 2
-                  </mat-list-item>
-                  <mat-divider></mat-divider>
-                  <mat-list-item>
-                    Semester 3
-                  </mat-list-item>
-                  <mat-divider></mat-divider>
-                  <mat-list-item>
-                    Semester 4
-                  </mat-list-item>
-                  <mat-divider></mat-divider>
-                  <mat-list-item>
-                    Semester 5
-                  </mat-list-item>
-                  <mat-divider></mat-divider>
-                  <mat-list-item>
-                    Semester 6
-                  </mat-list-item>
+                    <mat-list-item *ngFor="let item of program.practical | async; let i = index;">
+                        <a mat-button color="primary" [href]="item.url">{{program.id}} : Semester {{i + 1}} Practical</a>
+                      </mat-list-item>
                 </mat-list>
               </mat-tab>
             </mat-tab-group>
