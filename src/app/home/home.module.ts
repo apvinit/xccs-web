@@ -5,11 +5,14 @@ import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home/home.component';
 import { NewsComponent } from './news/news.component';
 
+import { MaterialModule } from '../material.module';
+
 @NgModule({
   declarations: [HomeComponent, NewsComponent],
   imports: [
     CommonModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+    MaterialModule
   ]
 })
 export class HomeModule { }
