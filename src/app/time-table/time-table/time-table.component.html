@@ -1,4 +1,4 @@
-<mat-progress-bar *ngIf="false" mode="query"></mat-progress-bar>
+<mat-progress-bar *ngIf="(timetablePrograms | async) === null" mode="query"></mat-progress-bar>
 <div class="container my-4">
   <div class="row justify-content-center">
     <div class="col">
