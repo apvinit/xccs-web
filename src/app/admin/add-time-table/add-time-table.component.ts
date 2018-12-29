@@ -58,7 +58,7 @@ export class AddTimeTableComponent implements OnInit {
     
 
     const fileRef = this.firebaseService.getStorageRef(filePath);
-    this.task = this.firebaseService.uploadFile(filePath, event);
+    this.task = this.firebaseService.uploadFile(filePath, event.target.files[0]);
     // observe percentage changes
     this.uploadPercent = this.task.percentageChanges();
     // get notified when the download URL is available
