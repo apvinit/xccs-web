@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FirebaseService } from 'src/app/firebase.service';
+import { Observable } from 'rxjs';
+import { Program } from 'src/app/model/program';
 
 @Component({
   selector: 'app-time-table',
@@ -7,9 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TimeTableComponent implements OnInit {
 
-  constructor() { }
+  timetablePrograms : Observable<Program[]>;
+
+  constructor(private firebaseService : FirebaseService) { }
 
   ngOnInit() {
+    this.timetablePrograms =  this.firebaseService.getTimeTablePrograms();
   }
 
 }

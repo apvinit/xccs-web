@@ -5,13 +5,13 @@
       <mat-card class="mat-elevation-z4"> 
         <mat-card-title>Time Table : Session Jan 2019</mat-card-title>
         <mat-accordion>
-          <mat-expansion-panel>
+          <mat-expansion-panel *ngFor="let program of timetablePrograms | async">
             <mat-expansion-panel-header>
               <mat-panel-title>
-                BCA
+                {{program.id}}
               </mat-panel-title>
               <mat-panel-description>
-                Bachelor of Computer Application
+                {{program.prog_name}}
               </mat-panel-description>
             </mat-expansion-panel-header>
             <mat-tab-group mat-align-tabs="center" animationDuration="400ms">
