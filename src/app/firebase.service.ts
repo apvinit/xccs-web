@@ -7,6 +7,7 @@ import { map } from 'rxjs/operators'
 import { Info } from './model/info';
 import { Course } from './model/Course';
 import { Program } from './model/program';
+import { Event_ } from './model/event';
 
 
 @Injectable({
@@ -86,6 +87,16 @@ export class FirebaseService {
   getPracticalTimeTable(id:string){
     let practicalRef = this.firestore.collection('timetable').doc(id).collection('Practical');
     return practicalRef.valueChanges();
+  }
+
+  addEvent(event : Event_){
+    let eventRef = this.firestore.collection<Event_>('events');
+    eventRef.add(event).then((docRef) => console.log("Added Successfully"))
+                      .catch((error) => console.log("Error Adding Document"));
+  }
+
+  getEvents(){
+    return this.firestore.collection<Event_>('events').valueChanges();
   }
 
 }
