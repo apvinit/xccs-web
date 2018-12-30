@@ -23,6 +23,7 @@ import { CoursesModule } from './courses/courses.module';
 import { TimeTableModule } from './time-table/time-table.module';
 import { GalleryModule } from './gallery/gallery.module';
 import { ContactModule } from './contact/contact.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { ContactModule } from './contact/contact.module';
     TimeTableModule,
     GalleryModule,
     ContactModule,
+    SharedModule,
     AppRoutingModule
   ],
   providers: [],
