@@ -1,6 +1,6 @@
 .mat-card-content{
-    height: 350px;
-    overflow-y: scroll;
+    max-height: 350px;
+    overflow-y: auto;
 }
 .up{
     z-index: 100;
