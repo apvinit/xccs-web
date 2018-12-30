@@ -1,0 +1,10 @@
+.mat-card-content{
+    height: 350px;
+    overflow-y: scroll;
+}
+.up{
+    z-index: 100;
+}
+.below {
+    z-index: 1;
+}
