@@ -7,7 +7,10 @@
 
 # dependencies
 /node_modules
+
+# firebase
 /functions/node_modules
+.firebase
 
 # profiling files
 chrome-profiler-events.json
