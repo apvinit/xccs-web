@@ -24,6 +24,7 @@ import { TimeTableModule } from './time-table/time-table.module';
 import { GalleryModule } from './gallery/gallery.module';
 import { ContactModule } from './contact/contact.module';
 import { SharedModule } from './shared/shared.module';
+import { FlexLayoutModule } from "@angular/flex-layout";
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { SharedModule } from './shared/shared.module';
     AngularFirestoreModule,
     AngularFireStorageModule,
     MaterialModule,
+    FlexLayoutModule,
     AboutModule,
     AdminModule,
     HomeModule,
