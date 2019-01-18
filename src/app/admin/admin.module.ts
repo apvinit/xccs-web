@@ -7,10 +7,11 @@ import { AdminComponent } from './admin/admin.component';
 import { MaterialModule } from '../material.module';
 import { AddCourseComponent } from './add-course/add-course.component';
 import { AddTimeTableComponent } from './add-time-table/add-time-table.component';
-import { AddEventComponent } from './add-event/add-event.component'
+import { AddEventComponent } from './add-event/add-event.component';
+import { AddNewsComponent } from './add-news/add-news.component'
 
 @NgModule({
-  declarations: [AdminComponent, AddCourseComponent, AddTimeTableComponent, AddEventComponent],
+  declarations: [AdminComponent, AddCourseComponent, AddTimeTableComponent, AddEventComponent, AddNewsComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,
