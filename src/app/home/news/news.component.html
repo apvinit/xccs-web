@@ -3,23 +3,8 @@
   <mat-divider class="up mat-elevation-z1"></mat-divider>
   <mat-card-content class="pt-3 below">
     <ul class="list-group">
-      <li class="list-group-item">
-        <a href="/time-table">thisis vsome long text wsome long text wsome long text wsome long text wsome long text wsome long text wsome long text wsome long text </a>
-      </li>
-      <li class="list-group-item">
-        <a href="/time-table">thisis vsome long text wsome long text </a>
-      </li>
-      <li class="list-group-item">
-        <a href="/time-table"> wsome long text wsome long text wsome long text wsome long text wsome long text </a>
-      </li>
-      <li class="list-group-item">
-        <a href="/time-table">thisis vso text wsome long text wsome long text wsome long text </a>
-      </li>
-      <li class="list-group-item">
-        <a href="/time-table">thisis vsome  wsome long text wsome long text wsome long text wsome long text wsome long text </a>
-      </li>
-      <li class="list-group-item">
-        <a href="/time-table">thisis vsome long text wsome long text wsome long text wsome long text wsome long text wsome long text wsome long text wsome long text </a>
+      <li class="list-group-item" *ngFor="let item of news">
+        <a [href]="item.link">{{ item.title }}</a>
       </li>
     </ul>
 
