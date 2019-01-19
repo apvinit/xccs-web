@@ -1,3 +1,14 @@
-<p>
-  add-news works!
-</p>
+<mat-card>
+  <mat-card-title>Add Latest News</mat-card-title>
+  <form [formGroup]="newsForm">
+    <mat-form-field>
+      <input matInput placeholder="Title" formControlName="link" required>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <input matInput placeholder="Link" formControlName="title" required>
+    </mat-form-field>
+    <br>
+    <button mat-raised-button color="primary" type="submit">ADD</button>
+  </form>
+</mat-card>

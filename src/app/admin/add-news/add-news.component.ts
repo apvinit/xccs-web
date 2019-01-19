@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-add-news',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddNewsComponent implements OnInit {
 
+  newsForm = new FormGroup({
+    link : new FormControl(''),
+    title : new FormControl('')
+  })
   constructor() { }
 
   ngOnInit() {
   }
 
+  onSubmit() {
+
+  }
 }
