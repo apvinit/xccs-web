@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { FirebaseService } from 'src/app/firebase.service';
+import { News } from 'src/app/model/news';
 
 @Component({
   selector: 'app-add-news',
@@ -12,12 +14,18 @@ export class AddNewsComponent implements OnInit {
     link : new FormControl(''),
     title : new FormControl('')
   })
-  constructor() { }
+  constructor(private firebaseService : FirebaseService) { }
 
   ngOnInit() {
   }
 
   onSubmit() {
+    this.addNews(this.newsForm.value);
+  }
 
+  addNews(news : News){
+    console.log(news);
+    this.firebaseService.addNews(news);
+    this.newsForm.reset();
   }
 }
