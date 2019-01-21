@@ -8,6 +8,7 @@ import { Info } from './model/info';
 import { Course } from './model/Course';
 import { Program } from './model/program';
 import { Event_ } from './model/event';
+import { News } from './model/news';
 
 
 @Injectable({
@@ -99,4 +100,13 @@ export class FirebaseService {
     return this.firestore.collection<Event_>('events').valueChanges();
   }
 
+  addNews(news : News) {
+    let newsRef = this.firestore.collection<News>('news');
+    newsRef.add(news).then((docRef) => console.log("Added Successfully"))
+              .catch((error) => console.log("Error Adding Document"));
+  }
+
+  getNews(){
+    return this.firestore.collection<News>('news').valueChanges();
+  }
 }
