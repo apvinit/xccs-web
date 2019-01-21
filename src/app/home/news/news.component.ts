@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { News } from 'src/app/model/news';
+import { FirebaseService } from 'src/app/firebase.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-news',
@@ -8,21 +10,11 @@ import { News } from 'src/app/model/news';
 })
 export class NewsComponent implements OnInit {
 
-  news : News[] = [
-    {link: '/time-table', title: 'Some title for some links in the latest news section'},
-    {link: '/time-table', title: 'Some title for some links in the latest news section'},
-    {link: '/time-table', title: 'Some title for some links in the latest news section'},
-    {link: '/time-table', title: 'Some title for some links in the latest news section'},
-    {link: '/time-table', title: 'Some title for some links in the latest news section'},
-    {link: '/time-table', title: 'Some title for some links in the latest news section'},
-    {link: '/time-table', title: 'Some title for some links in the latest news section'},
-    {link: '/time-table', title: 'Some title for some links in the latest news section'},
-    {link: '/time-table', title: 'Some title for some links in the latest news section'},
-    {link: '/time-table', title: 'Some title for some links in the latest news section'}
-  ]
-  constructor() { }
+  news$ : Observable<News[]>;
+  constructor(private firebaseService : FirebaseService) { }
 
   ngOnInit() {
+    this.news$ = this.firebaseService.getNews();
   }
 
 }

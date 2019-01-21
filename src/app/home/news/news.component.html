@@ -3,7 +3,7 @@
   <mat-divider class="up mat-elevation-z1"></mat-divider>
   <mat-card-content class="pt-3 below">
     <ul class="list-group">
-      <li class="list-group-item" *ngFor="let item of news">
+      <li class="list-group-item" *ngFor="let item of news$ | async">
         <a [href]="item.link">{{ item.title }}</a>
       </li>
     </ul>
