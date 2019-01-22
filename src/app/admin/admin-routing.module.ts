@@ -6,6 +6,7 @@ import { AddEventComponent } from './add-event/add-event.component';
 import { AddCourseComponent } from './add-course/add-course.component';
 import { AddTimeTableComponent } from './add-time-table/add-time-table.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { ManageNewsComponent } from './news/manage-news/manage-news.component';
 
 const routes: Routes = [
   {
@@ -15,7 +16,12 @@ const routes: Routes = [
         path : '', component : DashboardComponent
       },
       {
-        path : 'news', component : AddNewsComponent
+        path : 'news', component : ManageNewsComponent ,
+        children : [
+          {
+            path : 'add-news', component : AddNewsComponent
+          }
+        ]
       },
       {
         path : 'events', component : AddEventComponent
