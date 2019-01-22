@@ -1,3 +1,64 @@
-<p>
-  dashboard works!
-</p>
+<div class="row m-4 pt-4">
+    <div class="col">
+      <mat-card>
+        <mat-card-title>XCCS - Admin</mat-card-title>
+        <div class="row">
+          <div class="col-md-6">
+            <mat-card style="margin-bottom: 16px">
+              <mat-list>
+                <mat-list-item>
+                  <h5>Latest News</h5>
+                </mat-list-item>
+              </mat-list>
+              <mat-divider [inset]="true"></mat-divider>
+              <mat-card-actions align="end">
+                <a mat-button color="primary" routerLink="./news">Manage <mat-icon>arrow_forward</mat-icon></a>
+              </mat-card-actions>
+            </mat-card>
+          </div>
+  
+          <div class="col-md-6">
+            <mat-card style="margin-bottom: 16px">
+              <mat-list>
+                <mat-list-item>
+                  <h5>Time Table</h5>
+                </mat-list-item>
+              </mat-list>
+              <mat-divider [inset]="true"></mat-divider>
+              <mat-card-actions align="end">
+                <a mat-button color="primary" routerLink="./timetable">Manage <mat-icon>arrow_forward</mat-icon></a>
+              </mat-card-actions>
+            </mat-card>
+          </div>
+  
+          <div class="col-md-6">
+            <mat-card style="margin-bottom: 16px">
+              <mat-list>
+                <mat-list-item>
+                  <h5>Events</h5>
+                </mat-list-item>
+              </mat-list>
+              <mat-divider [inset]="true"></mat-divider>
+              <mat-card-actions align="end">
+                <a mat-button color="primary" routerLink="./events">Manage <mat-icon>arrow_forward</mat-icon></a>
+              </mat-card-actions>
+            </mat-card>
+          </div>
+  
+          <div class="col-md-6">
+            <mat-card style="margin-bottom: 16px">
+              <mat-list>
+                <mat-list-item>
+                  <h5>Courses</h5>
+                </mat-list-item>
+              </mat-list>
+              <mat-divider [inset]="true"></mat-divider>
+              <mat-card-actions align="end">
+                <a mat-button color="primary" routerLink="./courses">Manage <mat-icon>arrow_forward</mat-icon></a>
+              </mat-card-actions>
+            </mat-card>
+          </div>
+      </div>
+      </mat-card>
+    </div>
+  </div>
