@@ -10,10 +10,11 @@ import { AddTimeTableComponent } from './add-time-table/add-time-table.component
 import { AddEventComponent } from './add-event/add-event.component';
 import { AddNewsComponent } from './add-news/add-news.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { ManageNewsComponent } from './news/manage-news/manage-news.component'
+import { ManageNewsComponent } from './news/manage-news/manage-news.component';
+import { NewsListComponent } from './news/news-list/news-list.component'
 
 @NgModule({
-  declarations: [AdminComponent, AddCourseComponent, AddTimeTableComponent, AddEventComponent, AddNewsComponent, DashboardComponent, ManageNewsComponent],
+  declarations: [AdminComponent, AddCourseComponent, AddTimeTableComponent, AddEventComponent, AddNewsComponent, DashboardComponent, ManageNewsComponent, NewsListComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,
