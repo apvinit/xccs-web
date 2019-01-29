@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { AdminComponent } from './admin/admin.component';
-import { AddNewsComponent } from './add-news/add-news.component';
-import { AddEventComponent } from './add-event/add-event.component';
 import { AddCourseComponent } from './add-course/add-course.component';
+import { AddEventComponent } from './add-event/add-event.component';
+import { AddNewsComponent } from './add-news/add-news.component';
 import { AddTimeTableComponent } from './add-time-table/add-time-table.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ManageNewsComponent } from './news/manage-news/manage-news.component';
+import { NewsListComponent } from './news/news-list/news-list.component';
 
 const routes: Routes = [
   {
@@ -20,6 +21,9 @@ const routes: Routes = [
         children : [
           {
             path : 'add-news', component : AddNewsComponent
+          },
+          {
+            path : '', component : NewsListComponent
           }
         ]
       },
