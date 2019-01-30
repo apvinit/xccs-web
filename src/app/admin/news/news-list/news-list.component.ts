@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FirebaseService } from 'src/app/firebase.service';
+import { Observable } from 'rxjs';
+import { News } from 'src/app/model/news';
 
 @Component({
   selector: 'app-news-list',
@@ -7,9 +10,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewsListComponent implements OnInit {
 
-  constructor() { }
+  constructor(private firebaseService: FirebaseService) { }
 
+  newsItems$: Observable<News[]>;
   ngOnInit() {
+    this.newsItems$ = this.firebaseService.getNews();
   }
 
 }
