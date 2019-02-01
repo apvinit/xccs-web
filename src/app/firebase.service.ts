@@ -17,6 +17,7 @@ import { Course } from './model/Course';
 import { Program } from './model/program';
 import { Event_ } from './model/event';
 import { News } from './model/news';
+import { MatSnackBar } from '@angular/material';
 
 @Injectable({
   providedIn: 'root'
@@ -28,7 +29,8 @@ export class FirebaseService {
 
   constructor(
     private firestore: AngularFirestore,
-    private storage: AngularFireStorage
+    private storage: AngularFireStorage,
+    private snackBar: MatSnackBar
   ) {
     this.infoRef = this.firestore.collection('about').doc('info');
   }
@@ -67,6 +69,9 @@ export class FirebaseService {
       .doc(content.semester)
       .set({ url: content.url })
       .then(docref => {
+        this.snackBar.open('Added Successfully', 'Ok', {
+          duration : 2000
+        });
         console.log('Added successfully');
       })
       .catch(error => console.log('Error : Adding Timetable'));
@@ -130,7 +135,9 @@ export class FirebaseService {
     const newsRef = this.firestore.collection<News>('news');
     newsRef
       .add(news)
-      .then(docRef => console.log('Added Successfully'))
+      .then(docRef => this.snackBar.open('Added Successfully', '', {
+        duration : 2000
+      }))
       .catch(error => console.log('Error Adding Document'));
   }
 
