@@ -1,12 +1,15 @@
 <div style="padding: 16px">
   <mat-card>
+    <mat-card-title>Currently Published Latest News</mat-card-title>
+    <mat-divider></mat-divider>
     <mat-card-content>
       <mat-spinner *ngIf="(newsItems$ | async) === null" diameter="60" style="margin: 16px;"></mat-spinner>
       <mat-list>
         <mat-list-item *ngFor="let newsItem of newsItems$ | async; last as last">
           <h3 matLine>{{newsItem.title}}</h3>
           <p matLine>{{ newsItem.link }}</p>
-          <button mat-icon-button><mat-icon>edit</mat-icon></button>
+          <button mat-icon-button (click)="edit()"><mat-icon>edit</mat-icon></button>
+          <button mat-icon-button (click)="delete()"><mat-icon>delete</mat-icon></button>
           <mat-divider [inset]="true" *ngIf="!last"></mat-divider>
         </mat-list-item>
       </mat-list>
