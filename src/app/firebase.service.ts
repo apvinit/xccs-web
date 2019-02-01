@@ -1,112 +1,140 @@
 import { Injectable } from '@angular/core';
 
-import { AngularFirestore, AngularFirestoreDocument, AngularFirestoreCollection } from '@angular/fire/firestore'
-import { AngularFireStorage, AngularFireUploadTask, AngularFireStorageReference } from '@angular/fire/storage';
+import {
+  AngularFirestore,
+  AngularFirestoreDocument,
+  AngularFirestoreCollection
+} from '@angular/fire/firestore';
+import {
+  AngularFireStorage,
+  AngularFireUploadTask,
+  AngularFireStorageReference
+} from '@angular/fire/storage';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators'
+import { map } from 'rxjs/operators';
 import { Info } from './model/info';
 import { Course } from './model/Course';
 import { Program } from './model/program';
 import { Event_ } from './model/event';
 import { News } from './model/news';
 
-
 @Injectable({
   providedIn: 'root'
 })
 export class FirebaseService {
+  infoRef: AngularFirestoreDocument<Info>;
 
-  infoRef : AngularFirestoreDocument<Info>;
+  info: Observable<Info>;
 
-  info : Observable<Info>;
-  
   constructor(
-      private firestore: AngularFirestore,
-      private storage : AngularFireStorage ) { 
+    private firestore: AngularFirestore,
+    private storage: AngularFireStorage
+  ) {
     this.infoRef = this.firestore.collection('about').doc('info');
   }
 
-  getInfo(){
+  getInfo() {
     this.info = this.infoRef.valueChanges();
     return this.info;
   }
 
-  getCoursesOffered():Observable<Course[]> {
+  getCoursesOffered(): Observable<Course[]> {
     return this.firestore.collection<Course>('courses').valueChanges();
   }
 
-  addCourse(course : Course){
-    this.firestore.collection<Course>('courses').add(course)
-      .then((docref) => console.log("Added successfully with ref = " + docref.id))
-      .catch((error) => console.log("Error Creating Document"));
+  addCourse(course: Course) {
+    this.firestore
+      .collection<Course>('courses')
+      .add(course)
+      .then(docref => console.log('Added successfully with ref = ' + docref.id))
+      .catch(error => console.log('Error Creating Document'));
   }
 
-  getStorageRef(path): AngularFireStorageReference{
+  getStorageRef(path): AngularFireStorageReference {
     return this.storage.ref(path);
   }
 
-  uploadFile(path, file) : AngularFireUploadTask{
+  uploadFile(path, file): AngularFireUploadTask {
     return this.storage.upload(path, file);
   }
 
-  addTimeTable(id, content){ 
-    let timetableRef = this.firestore.collection('timetable');
-    timetableRef.doc(id.toUpperCase()).set({prog_name : content.prog_name});
-    timetableRef.doc(id.toUpperCase()).collection(content.timetable_type)
-                                      .doc(content.semester).set({ url : content.url})
-                                      .then((docref) => {console.log("Added successfully")})
-                                      .catch((error) => console.log("Error : Adding Timetable"));
+  addTimeTable(id, content) {
+    const timetableRef = this.firestore.collection('timetable');
+    timetableRef.doc(id.toUpperCase()).set({ prog_name: content.prog_name });
+    timetableRef
+      .doc(id.toUpperCase())
+      .collection(content.timetable_type)
+      .doc(content.semester)
+      .set({ url: content.url })
+      .then(docref => {
+        console.log('Added successfully');
+      })
+      .catch(error => console.log('Error : Adding Timetable'));
   }
 
-  getTimeTable() : Observable<Program[]>{
-    
-    //using vanilla firebse method
-    /* this.firestore.collection("timetable").get().subscribe((querySnapshot) => {
+  getTimeTable(): Observable<Program[]> {
+    // using vanilla firebse method
+    /* this.firestore.collection('timetable').get().subscribe((querySnapshot) => {
       querySnapshot.forEach(doc => {
           // doc.data() is never undefined for query doc snapshots
-          console.log(doc.id, " => ", doc.data());
+          console.log(doc.id, ' => ', doc.data());
       });
     }); */
 
     // using angularFire2 method
-    return this.firestore.collection('timetable').snapshotChanges().pipe(
-      map( actions => actions.map(a => {
-        const id = a.payload.doc.id;
-        const theory = this.getTheoryTimeTable(id);
-        const practical = this.getPracticalTimeTable(id);
-        const data = a.payload.doc.data() as { name : string};
-        return { id, ...data, theory, practical }
-      }))
-    )
+    return this.firestore
+      .collection('timetable')
+      .snapshotChanges()
+      .pipe(
+        map(actions =>
+          actions.map(a => {
+            const id = a.payload.doc.id;
+            const theory = this.getTheoryTimeTable(id);
+            const practical = this.getPracticalTimeTable(id);
+            const data = a.payload.doc.data() as { name: string };
+            return { id, ...data, theory, practical };
+          })
+        )
+      );
   }
 
-  getTheoryTimeTable(id:string){
-    let theoryRef = this.firestore.collection('timetable').doc(id).collection('Theory');
+  getTheoryTimeTable(id: string) {
+    const theoryRef = this.firestore
+      .collection('timetable')
+      .doc(id)
+      .collection('Theory');
     return theoryRef.valueChanges();
   }
 
-  getPracticalTimeTable(id:string){
-    let practicalRef = this.firestore.collection('timetable').doc(id).collection('Practical');
+  getPracticalTimeTable(id: string) {
+    const practicalRef = this.firestore
+      .collection('timetable')
+      .doc(id)
+      .collection('Practical');
     return practicalRef.valueChanges();
   }
 
-  addEvent(event : Event_){
-    let eventRef = this.firestore.collection<Event_>('events');
-    eventRef.add(event).then((docRef) => console.log("Added Successfully"))
-                      .catch((error) => console.log("Error Adding Document"));
+  addEvent(event: Event_) {
+    const eventRef = this.firestore.collection<Event_>('events');
+    eventRef
+      .add(event)
+      .then(docRef => console.log('Added Successfully'))
+      .catch(error => console.log('Error Adding Document'));
   }
 
-  getEvents(){
+  getEvents() {
     return this.firestore.collection<Event_>('events').valueChanges();
   }
 
-  addNews(news : News) {
-    let newsRef = this.firestore.collection<News>('news');
-    newsRef.add(news).then((docRef) => console.log("Added Successfully"))
-              .catch((error) => console.log("Error Adding Document"));
+  addNews(news: News) {
+    const newsRef = this.firestore.collection<News>('news');
+    newsRef
+      .add(news)
+      .then(docRef => console.log('Added Successfully'))
+      .catch(error => console.log('Error Adding Document'));
   }
 
-  getNews(){
+  getNews() {
     return this.firestore.collection<News>('news').valueChanges();
   }
 }
