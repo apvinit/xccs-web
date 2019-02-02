@@ -27,7 +27,7 @@ export class NewsListComponent implements OnInit {
       data: { edit : 'true', newsItem: newsItem as News }
     });
 
-    editNewsDialogRef.afterClosed().subscribe(result => console.log(result));
+    editNewsDialogRef.afterClosed().subscribe(result => { });
   }
 
   delete(id: string): void {

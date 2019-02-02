@@ -42,7 +42,6 @@ export class AddNewsComponent implements OnInit {
   }
 
   addNews(news: News) {
-    console.log(news);
     this.firebaseService.addNews(news);
     this.newsForm.reset();
     this.dialogRef.close();
