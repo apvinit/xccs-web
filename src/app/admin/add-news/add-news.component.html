@@ -21,12 +21,23 @@
       </button>
 
       <button
+        *ngIf="!editMode"
         mat-raised-button
         color="primary"
         type="submit"
         [disabled]="!newsForm.valid"
         >
         ADD
+      </button>
+
+      <button
+        *ngIf="editMode"
+        mat-raised-button
+        color="primary"
+        type="submit"
+        [disabled]="!newsForm.valid"
+        >
+        UPDATE
       </button>
     </mat-dialog-actions>
   </form>
