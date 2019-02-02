@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material';
+import { AddNewsComponent } from '../../add-news/add-news.component';
 
 @Component({
   selector: 'app-manage-news',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ManageNewsComponent implements OnInit {
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit() {
+  }
+
+  openAddNewsDialog(): void {
+    const addNewsDialogRef = this.dialog.open(AddNewsComponent);
   }
 
 }
