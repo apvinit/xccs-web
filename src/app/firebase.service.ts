@@ -138,10 +138,22 @@ export class FirebaseService {
       .then(docRef => this.snackBar.open('Added Successfully', '', {
         duration : 2000
       }))
-      .catch(error => console.log('Error Adding Document'));
+      .catch(error => this.snackBar.open('Error Adding Document', '', {
+        duration : 2000
+      }));
   }
 
-  getNews() {
-    return this.firestore.collection<News>('news').snapshotChanges();
+  getNews(): Observable<News[]> {
+    return this.firestore.collection<News>('news').snapshotChanges().pipe(map(
+      actions => {
+        return actions.map(a => {
+          const data = a.payload.doc.data() as News;
+          const id = a.payload.doc.id;
+          return { id, ...data};
+        });
+      }
+    ));
   }
+
+  
 }
