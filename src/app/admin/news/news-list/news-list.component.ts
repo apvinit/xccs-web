@@ -17,4 +17,7 @@ export class NewsListComponent implements OnInit {
     this.newsItems$ = this.firebaseService.getNews();
   }
 
+  delete(id: string): void {
+    this.firebaseService.removeNews(id);
+  }
 }
