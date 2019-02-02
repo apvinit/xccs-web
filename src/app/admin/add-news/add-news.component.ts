@@ -21,16 +21,35 @@ export class AddNewsComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: any
   ) { }
 
+  newsItem: News;
+  editMode: boolean;
+
   ngOnInit() {
+    if (this.data !== null) {
+      this.editMode = this.data.edit;
+      this.newsItem = this.data.newsItem;
+      this.newsForm.controls['link'].patchValue(this.newsItem.link);
+      this.newsForm.controls['title'].patchValue(this.newsItem.title);
+    }
   }
 
   onSubmit() {
-    this.addNews(this.newsForm.value);
+    if (this.editMode) {
+      this.updateNews(this.data.newsItem.id, this.newsForm.value);
+    } else {
+      this.addNews(this.newsForm.value);
+    }
   }
 
   addNews(news: News) {
     console.log(news);
     this.firebaseService.addNews(news);
+    this.newsForm.reset();
+    this.dialogRef.close();
+  }
+
+  updateNews(id: string, news: News) {
+    this.firebaseService.updateNews(id, news);
     this.newsForm.reset();
     this.dialogRef.close();
   }
