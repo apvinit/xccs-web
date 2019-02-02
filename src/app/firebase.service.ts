@@ -131,6 +131,7 @@ export class FirebaseService {
     return this.firestore.collection<Event_>('events').valueChanges();
   }
 
+  // CRUD operation methods for Latest News
   addNews(news: News) {
     const newsRef = this.firestore.collection<News>('news');
     newsRef
@@ -160,5 +161,12 @@ export class FirebaseService {
     docRef.delete().then(() => this.snackBar.open('Deleted Successfully', '', {
       duration : 2000
     })).catch(() => this.snackBar.open('Error Deleting Item'));
+  }
+
+  updateNews(id: string, news: News) {
+    const docRef = this.firestore.doc<News>(`news/${id}`);
+    docRef.set(news).then(() => this.snackBar.open('Updated Successfully', '', {
+      duration : 2000
+    })).catch(() => this.snackBar.open('Error Updating Item'));
   }
 }
