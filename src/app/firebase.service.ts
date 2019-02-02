@@ -155,5 +155,10 @@ export class FirebaseService {
     ));
   }
 
-  
+  removeNews(id: string) {
+    const docRef = this.firestore.doc<News>(`news/${id}`);
+    docRef.delete().then(() => this.snackBar.open('Deleted Successfully', '', {
+      duration : 2000
+    })).catch(() => this.snackBar.open('Error Deleting Item'));
+  }
 }
