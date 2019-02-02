@@ -142,6 +142,6 @@ export class FirebaseService {
   }
 
   getNews() {
-    return this.firestore.collection<News>('news').valueChanges();
+    return this.firestore.collection<News>('news').snapshotChanges();
   }
 }
