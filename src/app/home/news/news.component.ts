@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { News } from 'src/app/model/news';
 import { FirebaseService } from 'src/app/firebase.service';
 import { Observable } from 'rxjs';
-import { DocumentChangeAction } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-news',
