@@ -1,16 +1,33 @@
-<div class="p-5">
-  <mat-card class="m-4">
-    <mat-card-title>Add Latest News</mat-card-title>
-    <form [formGroup]="newsForm" (ngSubmit)="onSubmit()">
+<h1 mat-dialog-title>Add Latest News</h1>
+<div mat-dialog-content>
+  <form [formGroup]="newsForm" (ngSubmit)="onSubmit()">
+    <mat-dialog-content>
       <mat-form-field>
-        <input matInput placeholder="Title" formControlName="title" required>
+        <input matInput placeholder="Title" formControlName="title" required />
       </mat-form-field>
-      <br>
+      <br />
       <mat-form-field>
-        <input matInput placeholder="Link" formControlName="link" required>
+        <input matInput placeholder="Link" formControlName="link" required />
       </mat-form-field>
-      <br>
-      <button mat-raised-button color="primary" type="submit" [disabled]="!newsForm.valid">ADD</button>
-    </form>
-  </mat-card>
+      <br />
+    </mat-dialog-content>
+
+    <mat-dialog-actions>
+      <button
+        mat-raised-button
+        mat-dialog-close
+        >
+        CANCEL
+      </button>
+
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        [disabled]="!newsForm.valid"
+        >
+        ADD
+      </button>
+    </mat-dialog-actions>
+  </form>
 </div>
