@@ -12,6 +12,7 @@ import { AddNewsComponent } from './news/add-news/add-news.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ManageNewsComponent } from './news/manage-news/manage-news.component';
 import { NewsListComponent } from './news/news-list/news-list.component';
+import { ManageTimetableComponent } from './time-table/manage-timetable/manage-timetable.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { NewsListComponent } from './news/news-list/news-list.component';
     AddNewsComponent,
     DashboardComponent,
     ManageNewsComponent,
-    NewsListComponent
+    NewsListComponent,
+    ManageTimetableComponent
   ],
   imports: [
     CommonModule,
