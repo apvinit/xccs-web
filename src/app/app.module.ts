@@ -6,12 +6,12 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // Firebase
-import { AngularFireModule } from '@angular/fire'
+import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { environment } from 'src/environments/environment';
 
-import { MaterialModule } from './material.module'
+import { MaterialModule } from './material.module';
 
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
@@ -24,7 +24,8 @@ import { TimeTableModule } from './time-table/time-table.module';
 import { GalleryModule } from './gallery/gallery.module';
 import { ContactModule } from './contact/contact.module';
 import { SharedModule } from './shared/shared.module';
-import { FlexLayoutModule } from "@angular/flex-layout";
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { CommonModule } from './common/common.module';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { FlexLayoutModule } from "@angular/flex-layout";
     GalleryModule,
     ContactModule,
     SharedModule,
+    CommonModule,
     AppRoutingModule
   ],
   providers: [],
