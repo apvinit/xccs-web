@@ -25,7 +25,6 @@ import { GalleryModule } from './gallery/gallery.module';
 import { ContactModule } from './contact/contact.module';
 import { SharedModule } from './shared/shared.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { CommonModule } from './common/common.module';
 
 @NgModule({
   declarations: [
@@ -48,7 +47,6 @@ import { CommonModule } from './common/common.module';
     GalleryModule,
     ContactModule,
     SharedModule,
-    CommonModule,
     AppRoutingModule
   ],
   providers: [],
