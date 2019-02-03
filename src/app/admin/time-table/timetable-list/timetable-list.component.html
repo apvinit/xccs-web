@@ -1,0 +1,18 @@
+<div style="padding: 16px">
+  <mat-card>
+    <mat-card-title>Currently Published Timetable</mat-card-title>
+    <mat-divider></mat-divider>
+    <mat-card-content>
+      <mat-spinner
+        *ngIf="null === null"
+        diameter="60"
+        style="margin: 16px;"
+      ></mat-spinner>
+      <mat-list>
+        <mat-list-item>
+          <mat-divider [inset]="true" *ngIf="!last"></mat-divider>
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+  </mat-card>
+</div>
