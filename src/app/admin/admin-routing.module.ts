@@ -20,9 +20,6 @@ const routes: Routes = [
         path : 'news', component : ManageNewsComponent ,
         children : [
           {
-            path : 'add-news', component : AddNewsComponent
-          },
-          {
             path : '', component : NewsListComponent
           }
         ]
