@@ -9,7 +9,7 @@
           <h3 matLine>{{newsItem.title}}</h3>
           <p matLine>{{ newsItem.link }}</p>
           <button mat-icon-button (click)="edit(newsItem)"><mat-icon>edit</mat-icon></button>
-          <button mat-icon-button (click)="delete(newsItem.id)"><mat-icon>delete</mat-icon></button>
+          <button mat-icon-button (click)="askDeleteConfirmation(newsItem.id)"><mat-icon>delete</mat-icon></button>
           <mat-divider [inset]="true" *ngIf="!last"></mat-divider>
         </mat-list-item>
       </mat-list>

@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { News } from 'src/app/model/news';
 import { MatDialog } from '@angular/material';
 import { AddNewsComponent } from '../../add-news/add-news.component';
+import { ConfirmationDialogComponent } from 'src/app/shared/confirmation-dialog/confirmation-dialog.component';
 
 @Component({
   selector: 'app-news-list',
@@ -28,6 +29,15 @@ export class NewsListComponent implements OnInit {
     });
 
     editNewsDialogRef.afterClosed().subscribe(result => { });
+  }
+
+  askDeleteConfirmation(id: string): void {
+    const confirmationRef = this.dialog.open(ConfirmationDialogComponent);
+    confirmationRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.delete(id);
+      }
+    });
   }
 
   delete(id: string): void {
