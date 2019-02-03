@@ -3,7 +3,7 @@ import { FirebaseService } from 'src/app/firebase.service';
 import { Observable } from 'rxjs';
 import { News } from 'src/app/model/news';
 import { MatDialog } from '@angular/material';
-import { AddNewsComponent } from '../../add-news/add-news.component';
+import { AddNewsComponent } from '../add-news/add-news.component';
 import { ConfirmationDialogComponent } from 'src/app/shared/confirmation-dialog/confirmation-dialog.component';
 
 @Component({

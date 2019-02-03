@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material';
-import { AddNewsComponent } from '../../add-news/add-news.component';
+import { AddNewsComponent } from '../add-news/add-news.component';
 
 @Component({
   selector: 'app-manage-news',

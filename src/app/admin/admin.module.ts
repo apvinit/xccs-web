@@ -8,7 +8,7 @@ import { MaterialModule } from '../material.module';
 import { AddCourseComponent } from './add-course/add-course.component';
 import { AddTimeTableComponent } from './add-time-table/add-time-table.component';
 import { AddEventComponent } from './add-event/add-event.component';
-import { AddNewsComponent } from './add-news/add-news.component';
+import { AddNewsComponent } from './news/add-news/add-news.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ManageNewsComponent } from './news/manage-news/manage-news.component';
 import { NewsListComponent } from './news/news-list/news-list.component';
