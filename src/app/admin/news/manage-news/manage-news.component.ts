@@ -15,7 +15,9 @@ export class ManageNewsComponent implements OnInit {
   }
 
   openAddNewsDialog(): void {
-    const addNewsDialogRef = this.dialog.open(AddNewsComponent);
+    const addNewsDialogRef = this.dialog.open(AddNewsComponent, {
+      width: '400px'
+    });
   }
 
 }
