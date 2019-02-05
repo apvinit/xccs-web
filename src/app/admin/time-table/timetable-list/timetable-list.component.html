@@ -4,15 +4,45 @@
     <mat-divider></mat-divider>
     <mat-card-content>
       <mat-spinner
-        *ngIf="null === null"
+        *ngIf="(timetableItems$ | async) === null"
         diameter="60"
         style="margin: 16px;"
       ></mat-spinner>
-      <mat-list>
-        <mat-list-item>
-          <mat-divider [inset]="true" *ngIf="!last"></mat-divider>
-        </mat-list-item>
-      </mat-list>
+      <mat-card
+        *ngFor="let timetableItem of (timetableItems$ | async); last as last"
+        class="m-3"
+      >
+        <mat-tab-group mat-align-tabs="center">
+          <mat-tab label="Theory">
+            <mat-list class="justify-content-center">
+              <mat-list-item
+                *ngFor="
+                  let item of (timetableItem.theory | async);
+                  let i = index
+                "
+              >
+                <a mat-button color="primary" [href]="item.url"
+                  >{{ timetableItem.id }} : Semester {{ i + 1 }} Theory</a
+                >
+              </mat-list-item>
+            </mat-list>
+          </mat-tab>
+          <mat-tab label="Practical">
+            <mat-list>
+              <mat-list-item
+                *ngFor="
+                  let item of (timetableItem.practical | async);
+                  let i = index
+                "
+              >
+                <a mat-button color="primary" [href]="item.url"
+                  >{{ timetableItem.id }} : Semester {{ i + 1 }} Practical</a
+                >
+              </mat-list-item>
+            </mat-list>
+          </mat-tab>
+        </mat-tab-group>
+      </mat-card>
     </mat-card-content>
   </mat-card>
 </div>
