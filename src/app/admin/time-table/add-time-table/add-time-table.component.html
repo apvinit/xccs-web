@@ -1,36 +1,69 @@
-<div class="container my-4">
-  <div class="row">
-    <div class="col">
-      <form [formGroup]="timetableForm" (ngSubmit)="onSubmit()">
-        <mat-form-field>
-          <input type="text" matInput placeholder="Programme Id" formControlName="prog_id" required>
-        </mat-form-field><br>
-        <mat-form-field>
-          <input type="text" matInput placeholder="Programme Name" formControlName="prog_name" required>
-        </mat-form-field><br>
-        <mat-form-field>
-          <mat-select placeholder="Timetable Type" formControlName="timetable_type" required>
-            <mat-option>None</mat-option>
-            <mat-option *ngFor="let type of types" [value]="type.value">
-              {{type.viewValue}}
-            </mat-option>
-          </mat-select>
-        </mat-form-field><br>    
-        <mat-form-field>
-          <mat-select placeholder="Semester" formControlName="semester" required>
-            <mat-option>None</mat-option>
-            <mat-option *ngFor="let semester of semesters" [value]="semester.value">
-              {{semester.viewValue}}
-            </mat-option>
-          </mat-select>
-        </mat-form-field><br>
-        <input class="pb-3" type="file"  (change)="uploadFile($event)" fromControlName="url"> 
-        <span *ngIf="(uploadPercent | async) !== null;">
-          <mat-icon *ngIf="(uploadPercent | async) == 100; else loading;">done</mat-icon>
-          <ng-template #loading>uploading...</ng-template>
-        </span>
-        <br><button mat-raised-button color="primary" type="submit" [disabled]="!timetableForm.valid">ADD</button>   
-      </form>
-    </div>
-  </div>
-</div>
+<form [formGroup]="timetableForm" (ngSubmit)="onSubmit()">
+  <mat-dialog-content>
+    <mat-form-field class="w-100">
+      <input
+        type="text"
+        matInput
+        placeholder="Programme Id"
+        formControlName="prog_id"
+        required
+      /> </mat-form-field
+    ><br />
+    <mat-form-field class="w-100">
+      <input
+        type="text"
+        matInput
+        placeholder="Programme Name"
+        formControlName="prog_name"
+        required
+      /> </mat-form-field
+    ><br />
+    <mat-form-field class="w-100">
+      <mat-select
+        placeholder="Timetable Type"
+        formControlName="timetable_type"
+        required
+      >
+        <mat-option>None</mat-option>
+        <mat-option *ngFor="let type of types" [value]="type.value">
+          {{ type.viewValue }}
+        </mat-option>
+      </mat-select> </mat-form-field
+    ><br />
+    <mat-form-field class="w-100">
+      <mat-select placeholder="Semester" formControlName="semester" required>
+        <mat-option>None</mat-option>
+        <mat-option *ngFor="let semester of semesters" [value]="semester.value">
+          {{ semester.viewValue }}
+        </mat-option>
+      </mat-select> </mat-form-field
+    ><br />
+    <input
+      class="pb-3"
+      type="file"
+      (change)="uploadFile($event)"
+      fromControlName="url"
+    />
+    <span *ngIf="(uploadPercent | async) !== null">
+      <mat-icon *ngIf="(uploadPercent | async) == 100; else loading"
+        >done</mat-icon
+      >
+      <ng-template #loading>uploading...</ng-template>
+    </span>
+    <br />
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-raised-button mat-dialog-close>
+      CANCEL
+    </button>
+
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      [disabled]="!timetableForm.valid"
+    >
+      ADD
+    </button>
+  </mat-dialog-actions>
+</form>

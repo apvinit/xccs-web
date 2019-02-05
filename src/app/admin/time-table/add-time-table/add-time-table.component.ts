@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { FirebaseService } from 'src/app/firebase.service';
 import { Observable } from 'rxjs';
 import { finalize } from 'rxjs/operators';
 import { AngularFireUploadTask } from '@angular/fire/storage';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
 @Component({
   selector: 'app-add-time-table',
@@ -42,7 +43,11 @@ export class AddTimeTableComponent implements OnInit {
   uploadPercent: Observable<number>;
   downloadURL: Observable<string>;
 
-  constructor(private firebaseService: FirebaseService) {}
+  constructor(
+    private firebaseService: FirebaseService,
+    public dialogRef: MatDialogRef<AddTimeTableComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any
+  ) {}
 
   ngOnInit() {}
 
@@ -92,6 +97,7 @@ export class AddTimeTableComponent implements OnInit {
     };
 
     this.firebaseService.addTimeTable(id, data);
-    // this.timetableForm.reset();
+    this.timetableForm.reset();
+    this.dialogRef.close();
   }
 }
