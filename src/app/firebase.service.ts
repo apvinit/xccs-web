@@ -62,7 +62,7 @@ export class FirebaseService {
 
   addTimeTable(id, content) {
     const timetableRef = this.firestore.collection('timetable');
-    timetableRef.doc(id.toUpperCase()).set({ prog_name: content.prog_name });
+    timetableRef.doc(id.toUpperCase()).set({ name: content.prog_name });
     timetableRef
       .doc(id.toUpperCase())
       .collection(content.timetable_type)
