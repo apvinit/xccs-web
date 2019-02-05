@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material';
+import { AddTimeTableComponent } from '../add-time-table/add-time-table.component';
 
 @Component({
   selector: 'app-manage-timetable',
@@ -7,13 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ManageTimetableComponent implements OnInit {
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit() {
   }
 
   openAddTimetableDialog(): void {
-    // TODO
+    const addNewsDialogRef = this.dialog.open(AddTimeTableComponent, {
+      width: '400px'
+    });
   }
 
 }
