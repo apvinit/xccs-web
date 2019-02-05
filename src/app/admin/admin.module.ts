@@ -35,7 +35,8 @@ import { TimetableListComponent } from './time-table/timetable-list/timetable-li
     ReactiveFormsModule
   ],
   entryComponents: [
-    AddNewsComponent
+    AddNewsComponent,
+    AddTimeTableComponent
   ]
 })
 export class AdminModule {}
