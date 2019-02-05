@@ -12,18 +12,24 @@
         *ngFor="let timetableItem of (timetableItems$ | async); last as last"
         class="m-3"
       >
+        <mat-card-title>{{ timetableItem.id }}</mat-card-title>
+
         <mat-tab-group mat-align-tabs="center">
           <mat-tab label="Theory">
+            <mat-spinner
+              *ngIf="(timetableItem.theory | async) === null"
+              diameter="60"
+              style="margin: 16px;"
+            ></mat-spinner>
+
             <mat-list class="justify-content-center">
               <mat-list-item
                 *ngFor="
                   let item of (timetableItem.theory | async);
-                  let i = index
-                "
-              >
-                <a mat-button color="primary" [href]="item.url"
-                  >{{ timetableItem.id }} : Semester {{ i + 1 }} Theory</a
-                >
+                  let i = index">
+                <a mat-button color="primary" [href]="item.url">
+                  {{ timetableItem.id }} : Semester {{ i + 1 }} Theory
+                </a>
               </mat-list-item>
             </mat-list>
           </mat-tab>
@@ -32,12 +38,10 @@
               <mat-list-item
                 *ngFor="
                   let item of (timetableItem.practical | async);
-                  let i = index
-                "
-              >
-                <a mat-button color="primary" [href]="item.url"
-                  >{{ timetableItem.id }} : Semester {{ i + 1 }} Practical</a
-                >
+                  let i = index">
+                <a mat-button color="primary" [href]="item.url">
+                  {{ timetableItem.id }} : Semester {{ i + 1 }} Practical
+                </a>
               </mat-list-item>
             </mat-list>
           </mat-tab>
