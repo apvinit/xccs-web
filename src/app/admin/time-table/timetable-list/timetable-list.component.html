@@ -37,7 +37,7 @@
                 </button>
                 <button
                   mat-icon-button
-                  (click)="askDeleteConfirmation(timetableItem.id)"
+                  (click)="askDeleteConfirmation(timetableItem.id, 'Theory', i + 1)"
                 >
                   <mat-icon>delete</mat-icon>
                 </button>
@@ -60,7 +60,7 @@
                 </button>
                 <button
                   mat-icon-button
-                  (click)="askDeleteConfirmation(timetableItem.id)"
+                  (click)="askDeleteConfirmation(timetableItem.id, 'Practical', i + 1)"
                 >
                   <mat-icon>delete</mat-icon>
                 </button>
