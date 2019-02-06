@@ -60,6 +60,13 @@ export class FirebaseService {
     return this.storage.upload(path, file);
   }
 
+  // CRUD operations for the Timetable
+
+  /**
+   *
+   * @param id The id of the program
+   * @param content The name of the prgram and the schedules
+   */
   addTimeTable(id, content) {
     const timetableRef = this.firestore.collection('timetable');
     timetableRef.doc(id.toUpperCase()).set({ name: content.prog_name });
@@ -119,6 +126,37 @@ export class FirebaseService {
     return practicalRef.valueChanges();
   }
 
+  removeTimetable(id: string, type: string, semester: string): void {
+    if (type === 'Theory') {
+      this.removeTheoryTimetable(id, semester);
+    } else if (type === 'Practical') {
+      this.removePracticalTimetable(id, semester);
+    } else {
+      // Could not delete timetable
+    }
+  }
+
+  removeTheoryTimetable(program: string, semester: string): void {
+    const docRef = this.firestore
+      .collection('timetable')
+      .doc(program)
+      .collection('Theory').doc(semester.toString());
+      docRef.delete().then(() => this.snackBar.open('Deleted Successfully', '', {
+        duration : 2000
+      })).catch(() => this.snackBar.open('Error Deleting Item'));
+  }
+
+  removePracticalTimetable(program: string, semester: string): void {
+    const docRef = this.firestore
+      .collection('timetable')
+      .doc(program)
+      .collection('Practical').doc(semester.toString());
+      docRef.delete().then(() => this.snackBar.open('Deleted Successfully', '', {
+        duration : 2000
+      })).catch(() => this.snackBar.open('Error Deleting Item'));
+  }
+
+  // CRUD operations for the Events
   addEvent(event: Event_) {
     const eventRef = this.firestore.collection<Event_>('events');
     eventRef
