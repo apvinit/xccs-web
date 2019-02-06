@@ -22,4 +22,12 @@ export class TimetableListComponent implements OnInit {
     this.timetableItems$ = this.firebaseService.getTimeTable();
   }
 
+  edit(timetable: any): void {
+    // TODO:
+  }
+
+  askDeleteConfirmation(id: string): void {
+    // TODO:
+  }
+
 }
