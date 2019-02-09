@@ -10,6 +10,7 @@ import { ManageNewsComponent } from './news/manage-news/manage-news.component';
 import { NewsListComponent } from './news/news-list/news-list.component';
 import { ManageTimetableComponent } from './time-table/manage-timetable/manage-timetable.component';
 import { ManageCoursesComponent } from './courses/manage-courses/manage-courses.component';
+import { ManageEventsComponent } from './events/manage-events/manage-events.component';
 
 const routes: Routes = [
   {
@@ -27,7 +28,7 @@ const routes: Routes = [
         ]
       },
       {
-        path : 'events', component : AddEventComponent
+        path : 'events', component : ManageEventsComponent
       },
       {
         path : 'timetable', component : ManageTimetableComponent
