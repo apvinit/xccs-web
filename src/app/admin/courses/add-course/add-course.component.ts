@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { Course } from 'src/app/model/Course';
 import { FormGroup, FormControl } from '@angular/forms';
 import { FirebaseService } from 'src/app/firebase.service';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
 @Component({
   selector: 'app-add-course',
@@ -24,7 +25,10 @@ export class AddCourseComponent implements OnInit {
 
   course: Course;
 
-  constructor(private firebaseService: FirebaseService) {}
+  constructor(
+    private firebaseService: FirebaseService,
+    public dialogRef: MatDialogRef<AddCourseComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any) {}
 
   ngOnInit() {}
 
