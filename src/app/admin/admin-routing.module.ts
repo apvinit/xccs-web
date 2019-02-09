@@ -9,6 +9,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ManageNewsComponent } from './news/manage-news/manage-news.component';
 import { NewsListComponent } from './news/news-list/news-list.component';
 import { ManageTimetableComponent } from './time-table/manage-timetable/manage-timetable.component';
+import { ManageCoursesComponent } from './courses/manage-courses/manage-courses.component';
 
 const routes: Routes = [
   {
@@ -32,7 +33,7 @@ const routes: Routes = [
         path : 'timetable', component : ManageTimetableComponent
       },
       {
-        path : 'courses', component : AddCourseComponent
+        path : 'courses', component : ManageCoursesComponent
       }
     ]
   }

@@ -14,6 +14,7 @@ import { ManageNewsComponent } from './news/manage-news/manage-news.component';
 import { NewsListComponent } from './news/news-list/news-list.component';
 import { ManageTimetableComponent } from './time-table/manage-timetable/manage-timetable.component';
 import { TimetableListComponent } from './time-table/timetable-list/timetable-list.component';
+import { ManageCoursesComponent } from './courses/manage-courses/manage-courses.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { TimetableListComponent } from './time-table/timetable-list/timetable-li
     ManageNewsComponent,
     NewsListComponent,
     ManageTimetableComponent,
-    TimetableListComponent
+    TimetableListComponent,
+    ManageCoursesComponent
   ],
   imports: [
     CommonModule,
