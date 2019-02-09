@@ -74,7 +74,7 @@ export class FirebaseService {
       .doc(id.toUpperCase())
       .collection(content.timetable_type)
       .doc(content.semester)
-      .set({ url: content.url })
+      .set({ url: content.url, semester: content.semester })
       .then(docref => {
         this.snackBar.open('Added Successfully', 'Ok', {
           duration : 2000
