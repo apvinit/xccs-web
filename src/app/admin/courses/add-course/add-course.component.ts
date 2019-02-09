@@ -9,32 +9,28 @@ import { FirebaseService } from 'src/app/firebase.service';
   styleUrls: ['./add-course.component.scss']
 })
 export class AddCourseComponent implements OnInit {
-
   courseForm = new FormGroup({
-    programme_code : new FormControl(''),
-    programme_name : new FormControl(''),
-    min_duration : new FormControl(''),
-    max_duration : new FormControl(''),
-    course_fee : new FormControl(''),
-    min_age : new FormControl(''),
-    max_age : new FormControl(''),
-    eligibility : new FormControl(''),
-    info : new FormControl(''),
-    description : new FormControl('')
-  })
+    programme_code: new FormControl(''),
+    programme_name: new FormControl(''),
+    min_duration: new FormControl(''),
+    max_duration: new FormControl(''),
+    course_fee: new FormControl(''),
+    min_age: new FormControl(''),
+    max_age: new FormControl(''),
+    eligibility: new FormControl(''),
+    info: new FormControl(''),
+    description: new FormControl('')
+  });
 
+  course: Course;
 
-  course : Course;
+  constructor(private firebaseService: FirebaseService) {}
 
-  constructor(private firebaseService : FirebaseService) { }
+  ngOnInit() {}
 
-  ngOnInit() {
-  }
-
-  addCourse(){
+  addCourse() {
     this.course = this.courseForm.value;
-    this.firebaseService.addCourse(this.course);    
-    this.courseForm.reset()
+    this.firebaseService.addCourse(this.course);
+    this.courseForm.reset();
   }
-
 }
