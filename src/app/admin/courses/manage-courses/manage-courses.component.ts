@@ -12,4 +12,8 @@ export class ManageCoursesComponent implements OnInit {
   ngOnInit() {
   }
 
+  openAddCoursesDialog(): void {
+    //  TODO:
+  }
+
 }

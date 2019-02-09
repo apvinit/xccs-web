@@ -1,3 +1,13 @@
-<p>
-  manage-courses works!
-</p>
+<mat-toolbar color="primary">Manage Courses</mat-toolbar>
+<mat-card style="margin: 16px !important; margin-bottom: 0;">
+  <mat-card-title>
+    <button
+      mat-raised-button
+      color="primary"
+      title="Add a new timetable"
+      (click)="openAddCoursesDialog()"
+    >
+      + ADD
+    </button>
+  </mat-card-title>
+</mat-card>
