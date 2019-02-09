@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminComponent } from './admin/admin.component';
-import { AddCourseComponent } from './add-course/add-course.component';
+import { AddCourseComponent } from './courses/add-course/add-course.component';
 import { AddEventComponent } from './add-event/add-event.component';
 import { AddNewsComponent } from './news/add-news/add-news.component';
 import { AddTimeTableComponent } from './time-table/add-time-table/add-time-table.component';
