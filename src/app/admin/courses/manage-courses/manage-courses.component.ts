@@ -18,7 +18,7 @@ export class ManageCoursesComponent implements OnInit {
     const addCourseDialogRef = this.dialog.open(AddCourseComponent, {
       width: '80vw',
       panelClass: 'mt-5',
-      disableClose: false
+      disableClose: true
     });
   }
 
