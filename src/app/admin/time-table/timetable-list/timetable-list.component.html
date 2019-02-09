@@ -30,14 +30,14 @@
                 "
               >
                 <a mat-button color="primary" [href]="item.url">
-                  {{ timetableItem.id }} : Semester {{ i + 1 }} Theory
+                  {{ timetableItem.id }} : Semester {{ item.semester }} Theory
                 </a>
                 <button mat-icon-button (click)="edit(timetableItem)">
                   <mat-icon>edit</mat-icon>
                 </button>
                 <button
                   mat-icon-button
-                  (click)="askDeleteConfirmation(timetableItem.id, 'Theory', i + 1)"
+                  (click)="askDeleteConfirmation(timetableItem.id, 'Theory', item.semester)"
                 >
                   <mat-icon>delete</mat-icon>
                 </button>
@@ -53,14 +53,14 @@
                 "
               >
                 <a mat-button color="primary" [href]="item.url">
-                  {{ timetableItem.id }} : Semester {{ i + 1 }} Practical
+                  {{ timetableItem.id }} : Semester {{ item.semester }} Practical
                 </a>
                 <button mat-icon-button (click)="edit(timetableItem)">
                   <mat-icon>edit</mat-icon>
                 </button>
                 <button
                   mat-icon-button
-                  (click)="askDeleteConfirmation(timetableItem.id, 'Practical', i + 1)"
+                  (click)="askDeleteConfirmation(timetableItem.id, 'Practical', item.semester)"
                 >
                   <mat-icon>delete</mat-icon>
                 </button>
