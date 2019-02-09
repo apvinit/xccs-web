@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material';
+import { AddCourseComponent } from '../add-course/add-course.component';
 
 @Component({
   selector: 'app-manage-courses',
@@ -7,13 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ManageCoursesComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dialog: MatDialog) { }
 
   ngOnInit() {
   }
 
   openAddCoursesDialog(): void {
-    //  TODO:
+    const addCourseDialogRef = this.dialog.open(AddCourseComponent);
   }
 
 }
