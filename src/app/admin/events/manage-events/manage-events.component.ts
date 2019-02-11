@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material';
+import { AddEventComponent } from '../add-event/add-event.component';
 
 @Component({
   selector: 'app-manage-events',
@@ -7,13 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ManageEventsComponent implements OnInit {
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit() {
   }
 
   openAddEventsDialog(): void {
-    // TODO:
+    const addEventDialogRef = this.dialog.open(AddEventComponent, {
+      disableClose: true
+    });
   }
 
 }
