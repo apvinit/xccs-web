@@ -45,7 +45,8 @@ import { EventsListComponent } from './events/events-list/events-list.component'
   entryComponents: [
     AddNewsComponent,
     AddTimeTableComponent,
-    AddCourseComponent
+    AddCourseComponent,
+    AddEventComponent
   ]
 })
 export class AdminModule {}
