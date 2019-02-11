@@ -1,25 +1,44 @@
-<div class="container pt-4">
-  <div class="row">
-    <div class="col">
-      <form [formGroup]="eventForm" (ngSubmit)="onSubmit()">
-        <mat-form-field>
-          <input matInput placeholder="Title" formControlName="title" required/>
-        </mat-form-field> <br>
-        <mat-form-field>
-          <input matInput placeholder="Subtitle" formControlName="subtitle" required />
-        </mat-form-field> <br>
-        <mat-form-field>
-          <input matInput placeholder="Description" formControlName="description" required />
-        </mat-form-field> <br>
-        <!-- <input class="mb-4" type="file" (change)="uploadFile($event)"> <br> -->
-        <input class="pb-3" type="file" (change)="uploadFile($event)" multiple>
-        <span *ngIf="uploading !== null">
-          <mat-icon *ngIf="uploaded; else loading">done</mat-icon>
-          <ng-template #loading>uploading...</ng-template>
-        </span>
-        <br>
-        <button mat-raised-button color="primary" type="submit" [disabled]="!uploaded">ADD</button>
-      </form>
-    </div>
-  </div>
-</div>
+<h3 mat-dialog-title>Add Event</h3>
+<form [formGroup]="eventForm" (ngSubmit)="onSubmit()">
+  <mat-dialog-content>
+    <mat-form-field class="w-100">
+      <input matInput placeholder="Title" formControlName="title" required />
+    </mat-form-field>
+    <br />
+    <mat-form-field class="w-100">
+      <input
+        matInput
+        placeholder="Subtitle"
+        formControlName="subtitle"
+        required
+      />
+    </mat-form-field>
+    <br />
+    <mat-form-field class="w-100">
+      <input
+        matInput
+        placeholder="Description"
+        formControlName="description"
+        required
+      />
+    </mat-form-field>
+    <br />
+    <!-- <input class="mb-4" type="file" (change)="uploadFile($event)"> <br> -->
+    <input class="pb-3" type="file" (change)="uploadFile($event)" multiple />
+    <span *ngIf="uploading !== null">
+      <mat-icon *ngIf="uploaded; else loading">done</mat-icon>
+      <ng-template #loading>uploading...</ng-template>
+    </span>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-raised-button mat-dialog-close>CANCEL</button>
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      [disabled]="!uploaded"
+    >
+      ADD
+    </button>
+  </mat-dialog-actions>
+</form>
