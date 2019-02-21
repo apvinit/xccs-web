@@ -1,5 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { Course } from 'src/app/model/Course';
+import { Course } from 'src/app/model/course';
 import { FormGroup, FormControl } from '@angular/forms';
 import { FirebaseService } from 'src/app/firebase.service';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';

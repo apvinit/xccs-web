@@ -10,12 +10,11 @@ import { Observable } from 'rxjs';
 })
 export class GalleryComponent implements OnInit {
 
-  constructor(private firebaseService : FirebaseService) { }
+  constructor(private firebaseService: FirebaseService) { }
 
-  events : Observable<Event_[]>;
+  events: Observable<Event_[]>;
 
   ngOnInit() {
     this.events = this.firebaseService.getEvents();
   }
-
 }

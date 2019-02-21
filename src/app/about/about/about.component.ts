@@ -9,13 +9,11 @@ import { Info } from '../../model/info';
 })
 export class AboutComponent implements OnInit {
 
-  constructor(private firebase : FirebaseService) { }
-  info : Info;
+  constructor(private firebase: FirebaseService) { }
+  info: Info;
   ngOnInit() {
-    this.firebase.getInfo().subscribe((info : Info) => {
+    this.firebase.getInfo().subscribe((info: Info) => {
       this.info = info;
     });
   }
-
-
 }

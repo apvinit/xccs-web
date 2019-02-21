@@ -1,4 +1,4 @@
 export interface Info {
     heading: string;
-    content : string;
+    content: string;
 }
