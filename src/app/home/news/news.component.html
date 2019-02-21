@@ -2,11 +2,11 @@
   <mat-card-title>Latest News</mat-card-title>
   <mat-divider class="up mat-elevation-z1"></mat-divider>
   <mat-card-content class="pt-3 below">
+    <mat-spinner *ngIf="(news$ | async) === null" diameter="56"></mat-spinner>
     <ul class="list-group">
       <li class="list-group-item" *ngFor="let item of news$ | async">
         <a [href]="item.link">{{ item.title }}</a>
       </li>
     </ul>
-
   </mat-card-content>
 </mat-card>
