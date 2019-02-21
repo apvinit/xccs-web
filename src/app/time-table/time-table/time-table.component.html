@@ -1,39 +1,53 @@
-<mat-toolbar color="primary">Timetable</mat-toolbar>
-<mat-progress-bar *ngIf="(timetablePrograms | async) === null" mode="query"></mat-progress-bar>
+<mat-toolbar color="primary">Timetable : Session Jan 2019</mat-toolbar>
+<mat-progress-bar
+  *ngIf="(timetablePrograms | async) === null"
+  mode="query"
+></mat-progress-bar>
 <div class="container my-4">
   <div class="row justify-content-center">
     <div class="col">
-      <mat-card class="mat-elevation-z4">
-        <mat-card-title>Time Table : Session Jan 2019</mat-card-title>
-        <mat-accordion>
-          <mat-expansion-panel *ngFor="let program of timetablePrograms | async">
-            <mat-expansion-panel-header>
-              <mat-panel-title>
-                {{program.id}}
-              </mat-panel-title>
-              <mat-panel-description>
-                {{ program.name }}
-              </mat-panel-description>
-            </mat-expansion-panel-header>
-            <mat-tab-group mat-align-tabs="center" animationDuration="400ms">
-              <mat-tab label="Theory">
-                <mat-list class="justify-content-center">
-                  <mat-list-item *ngFor="let item of program.theory | async; let i = index;">
-                    <a mat-button color="primary" [href]="item.url">{{program.id}} : Semester {{item.semester}} Theory</a>
-                  </mat-list-item>
-                </mat-list>
-              </mat-tab>
-              <mat-tab label="Practical">
-                <mat-list>
-                    <mat-list-item *ngFor="let item of program.practical | async; let i = index;">
-                        <a mat-button color="primary" [href]="item.url">{{program.id}} : Semester {{item.semester}} Practical</a>
-                      </mat-list-item>
-                </mat-list>
-              </mat-tab>
-            </mat-tab-group>
-          </mat-expansion-panel>
-        </mat-accordion>
-      </mat-card>
+      <mat-accordion>
+        <mat-expansion-panel
+          *ngFor="let program of (timetablePrograms | async)"
+        >
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              {{ program.id }}
+            </mat-panel-title>
+            <mat-panel-description>
+              {{ program.name }}
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <mat-tab-group mat-align-tabs="center" animationDuration="400ms">
+            <mat-tab label="Theory">
+              <mat-list class="justify-content-center">
+                <mat-list-item
+                  *ngFor="let item of (program.theory | async); let i = index"
+                >
+                  <a mat-button color="primary" [href]="item.url"
+                    >{{ program.id }} : Semester {{ item.semester }} Theory</a
+                  >
+                </mat-list-item>
+              </mat-list>
+            </mat-tab>
+            <mat-tab label="Practical">
+              <mat-list>
+                <mat-list-item
+                  *ngFor="
+                    let item of (program.practical | async);
+                    let i = index
+                  "
+                >
+                  <a mat-button color="primary" [href]="item.url"
+                    >{{ program.id }} : Semester
+                    {{ item.semester }} Practical</a
+                  >
+                </mat-list-item>
+              </mat-list>
+            </mat-tab>
+          </mat-tab-group>
+        </mat-expansion-panel>
+      </mat-accordion>
     </div>
   </div>
 </div>
