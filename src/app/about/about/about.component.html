@@ -1,4 +1,5 @@
 <mat-toolbar color="primary">About</mat-toolbar>
+<mat-progress-bar *ngIf="info == null" mode="query"></mat-progress-bar>
 <mat-card class="m-4 mat-elevataion-z6">
   <mat-card-title>{{ info?.heading }} </mat-card-title>
   <mat-card-content>{{ info?.content }}</mat-card-content>
