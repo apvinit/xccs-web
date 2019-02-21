@@ -1,74 +1,75 @@
 <div style="padding: 16px">
-  <mat-card>
-    <mat-card-title>Currently Published Timetable</mat-card-title>
-    <mat-divider></mat-divider>
-    <mat-card-content>
-      <mat-spinner
-        *ngIf="(timetableItems$ | async) === null"
-        diameter="60"
-        style="margin: 16px;"
-      ></mat-spinner>
-      <mat-card
-        *ngFor="let timetableItem of (timetableItems$ | async); last as last"
-        class="m-3"
-      >
-        <mat-card-title>{{ timetableItem.id }}</mat-card-title>
+  <h4 class="m-3">Currently Published Timetable</h4>
+  <mat-divider class="mx-3"></mat-divider>
+  <mat-spinner
+    *ngIf="(timetableItems$ | async) === null"
+    diameter="60"
+    style="margin: 16px;"
+  ></mat-spinner>
+  <mat-card
+    *ngFor="let timetableItem of (timetableItems$ | async); last as last"
+    class="m-3"
+  >
+    <mat-card-title>{{ timetableItem.id }}</mat-card-title>
 
-        <mat-tab-group mat-align-tabs="center">
-          <mat-tab label="Theory">
-            <mat-spinner
-              *ngIf="(timetableItem.theory | async) === null"
-              diameter="60"
-              style="margin: 16px;"
-            ></mat-spinner>
+    <mat-tab-group mat-align-tabs="center">
+      <mat-tab label="Theory">
+        <mat-spinner
+          *ngIf="(timetableItem.theory | async) === null"
+          diameter="60"
+          style="margin: 16px;"
+        ></mat-spinner>
 
-            <mat-list class="justify-content-center">
-              <mat-list-item
-                *ngFor="
-                  let item of (timetableItem.theory | async);
-                  let i = index
-                "
-              >
-                <a mat-button color="primary" [href]="item.url">
-                  {{ timetableItem.id }} : Semester {{ item.semester }} Theory
-                </a>
-                <button mat-icon-button (click)="edit(timetableItem)">
-                  <mat-icon>edit</mat-icon>
-                </button>
-                <button
-                  mat-icon-button
-                  (click)="askDeleteConfirmation(timetableItem.id, 'Theory', item.semester)"
-                >
-                  <mat-icon>delete</mat-icon>
-                </button>
-              </mat-list-item>
-            </mat-list>
-          </mat-tab>
-          <mat-tab label="Practical">
-            <mat-list>
-              <mat-list-item
-                *ngFor="
-                  let item of (timetableItem.practical | async);
-                  let i = index
-                "
-              >
-                <a mat-button color="primary" [href]="item.url">
-                  {{ timetableItem.id }} : Semester {{ item.semester }} Practical
-                </a>
-                <button mat-icon-button (click)="edit(timetableItem)">
-                  <mat-icon>edit</mat-icon>
-                </button>
-                <button
-                  mat-icon-button
-                  (click)="askDeleteConfirmation(timetableItem.id, 'Practical', item.semester)"
-                >
-                  <mat-icon>delete</mat-icon>
-                </button>
-              </mat-list-item>
-            </mat-list>
-          </mat-tab>
-        </mat-tab-group>
-      </mat-card>
-    </mat-card-content>
+        <mat-list class="justify-content-center">
+          <mat-list-item
+            *ngFor="let item of (timetableItem.theory | async); let i = index"
+          >
+            <a mat-button color="primary" [href]="item.url">
+              {{ timetableItem.id }} : Semester {{ item.semester }} Theory
+            </a>
+            <button mat-icon-button (click)="edit(timetableItem)">
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button
+              mat-icon-button
+              (click)="
+                askDeleteConfirmation(timetableItem.id, 'Theory', item.semester)
+              "
+            >
+              <mat-icon>delete</mat-icon>
+            </button>
+          </mat-list-item>
+        </mat-list>
+      </mat-tab>
+      <mat-tab label="Practical">
+        <mat-list>
+          <mat-list-item
+            *ngFor="
+              let item of (timetableItem.practical | async);
+              let i = index
+            "
+          >
+            <a mat-button color="primary" [href]="item.url">
+              {{ timetableItem.id }} : Semester {{ item.semester }} Practical
+            </a>
+            <button mat-icon-button (click)="edit(timetableItem)">
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button
+              mat-icon-button
+              (click)="
+                askDeleteConfirmation(
+                  timetableItem.id,
+                  'Practical',
+                  item.semester
+                )
+              "
+            >
+              <mat-icon>delete</mat-icon>
+            </button>
+          </mat-list-item>
+        </mat-list>
+      </mat-tab>
+    </mat-tab-group>
   </mat-card>
 </div>
