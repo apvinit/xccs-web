@@ -1,12 +1,9 @@
+<mat-toolbar color="primary">Courses Offered at 0515P</mat-toolbar>
 <mat-progress-bar *ngIf="(courses$ | async) === null" mode="query"></mat-progress-bar>
 <div class="container-fluid mx-0">
   <div class="row mt-4 justify-content-center">
-    <div class="col-lg-8">
-      <mat-card>
-        <mat-card-title>
-          Courses Offered at 0516P
-        </mat-card-title>
-        <mat-accordion>
+    <div class="col-lg-8 mb-4">
+        <mat-accordion multi="true">
           <mat-expansion-panel *ngFor="let course of courses$ | async">
             <mat-expansion-panel-header>
               <mat-panel-title>
@@ -33,7 +30,6 @@
             </p>
           </mat-expansion-panel>
         </mat-accordion>
-      </mat-card>
     </div>
   </div>
 </div>
