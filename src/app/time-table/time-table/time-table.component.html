@@ -19,14 +19,14 @@
               <mat-tab label="Theory">
                 <mat-list class="justify-content-center">
                   <mat-list-item *ngFor="let item of program.theory | async; let i = index;">
-                    <a mat-button color="primary" [href]="item.url">{{program.id}} : Semester {{i + 1}} Theory</a>
+                    <a mat-button color="primary" [href]="item.url">{{program.id}} : Semester {{item.semester}} Theory</a>
                   </mat-list-item>
                 </mat-list>
               </mat-tab>
               <mat-tab label="Practical">
                 <mat-list>
                     <mat-list-item *ngFor="let item of program.practical | async; let i = index;">
-                        <a mat-button color="primary" [href]="item.url">{{program.id}} : Semester {{i + 1}} Practical</a>
+                        <a mat-button color="primary" [href]="item.url">{{program.id}} : Semester {{item.semester}} Practical</a>
                       </mat-list-item>
                 </mat-list>
               </mat-tab>
