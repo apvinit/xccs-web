@@ -2,19 +2,21 @@
 <div class="container pt-4">
   <div class="row">
     <div class="col-lg-4">
-      <mat-card class="mb-4" *ngFor="let event of events | async">
+      <mat-card class="mb-4" *ngFor="let event of (events | async)">
         <mat-card-header>
-          <mat-card-title>{{event.title}}</mat-card-title>
-          <mat-card-subtitle>{{event.subtitle}}</mat-card-subtitle>
+          <mat-card-title>{{ event.title }}</mat-card-title>
+          <mat-card-subtitle>{{ event.subtitle }}</mat-card-subtitle>
         </mat-card-header>
-        <img mat-card-image [src]="event.thumbnail">
+        <img mat-card-image [src]="event.thumbnail" />
         <mat-card-content>
           <p>
-            {{event.description}}
+            {{ event.description }}
           </p>
         </mat-card-content>
         <mat-card-actions align="end">
-          <button mat-button color="primary">SEE ALL PHOTOS <mat-icon>arrow_forward</mat-icon></button>
+          <button mat-button color="primary">
+            SEE ALL PHOTOS <mat-icon>arrow_forward</mat-icon>
+          </button>
         </mat-card-actions>
       </mat-card>
     </div>
