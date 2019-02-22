@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FirebaseService } from 'src/app/firebase.service';
+import { Observable } from 'rxjs';
+import { Event_ } from 'src/app/model/event';
 
 @Component({
   selector: 'app-events-list',
@@ -7,9 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EventsListComponent implements OnInit {
 
-  constructor() { }
+  constructor(private firebaseService: FirebaseService) { }
+
+  events$: Observable<Event_[]>;
 
   ngOnInit() {
+    this.events$ = this.firebaseService.getEvents();
   }
 
 }
