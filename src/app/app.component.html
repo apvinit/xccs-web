@@ -1,7 +1,10 @@
 <mat-toolbar class="mat-elevation-z6 bg-white fixed-top">
   <mat-toolbar-row>
-    <nav class="nav" role="navigation">
-      <a class="nav-link" mat-button routerLink="/" ><span>XCCS 0516P</span></a>
+    <div fxHide fxShow.lt-sm="true">
+      <span><button mat-icon-button><mat-icon>menu</mat-icon></button></span>
+    </div>
+    <span><a class="nav-link" mat-button routerLink="/"> XCCS 0516P</a></span>
+    <nav class="nav" role="navigation" fxHide.lt-sm="true">
       <a class="nav-link" mat-button routerLink="/home" >Home</a>
       <a class="nav-link" mat-button routerLink="/courses" >Courses Offered</a>
       <a class="nav-link" mat-button routerLink="/time-table" >Time Table</a>
@@ -9,7 +12,8 @@
       <a class="nav-link" mat-button routerLink="/about" >About Us</a>
       <a class="nav-link" mat-button routerLink="/contact" >Contact</a>
     </nav>
-  </mat-toolbar-row>  
+
+  </mat-toolbar-row>
 </mat-toolbar>
 <div class="container-fluid toolbar-margin px-0">
   <router-outlet></router-outlet>
