@@ -1,9 +1,26 @@
 <div style="padding: 16px">
-  <mat-card>
-    <mat-card-title>Currently Published Courses</mat-card-title>
-    <mat-divider></mat-divider>
+  <mat-card
+    *ngFor="let course of (courses$ | async); last as last"
+    class="mb-4"
+  >
+    <mat-card-header>
+      <mat-card-title>
+        {{ course.programme_code }} :: {{ course.programme_name }}
+      </mat-card-title>
+      <button mat-icon-button disabled><mat-icon>edit</mat-icon></button>
+      <button mat-icon-button><mat-icon>delete</mat-icon></button>
+    </mat-card-header>
+    <mat-divider [inset]="true" class="mb-3"></mat-divider>
     <mat-card-content>
-
+      <p>
+        Minimum Duration : {{ course.min_duration }} <br />
+        Maximum Duration : {{ course.max_duration }} <br />
+      </p>
+      <p>Course Fee : {{ course.course_fee }}</p>
+      <p>Min Age : {{ course.min_age }}</p>
+      <p>Max Age : {{ course.min_age }}</p>
+      <p>Eligibility : {{ course.eligibility }}</p>
+      <p>Info : {{ course.info }} Description : {{ course.description }}</p>
     </mat-card-content>
   </mat-card>
 </div>

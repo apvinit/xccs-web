@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FirebaseService } from 'src/app/firebase.service';
+import { Course } from 'src/app/model/course';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-courses-list',
@@ -7,9 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CoursesListComponent implements OnInit {
 
-  constructor() { }
+  constructor(private firebaseService: FirebaseService) { }
+
+  courses$: Observable<Course[]>;
 
   ngOnInit() {
+    this.courses$ = this.firebaseService.getCoursesOffered();
   }
 
 }
