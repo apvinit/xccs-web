@@ -6,13 +6,15 @@ import { HomeComponent } from './home/home.component';
 import { NewsComponent } from './news/news.component';
 
 import { MaterialModule } from '../material.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [HomeComponent, NewsComponent],
   imports: [
     CommonModule,
     HomeRoutingModule,
-    MaterialModule
+    MaterialModule,
+    FlexLayoutModule
   ]
 })
 export class HomeModule { }
