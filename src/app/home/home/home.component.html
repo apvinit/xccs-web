@@ -1,77 +1,63 @@
-<div class="container-fluid">
-    <div class="row pt-4 cover-bg">
-      <div class="col-md-8">
-        
-      </div>
-      <div class="col-md-4 mb-4">
-        <app-news></app-news>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col text-center p-3">
-        <h3>Prominent Persons</h3>
-      </div>
-    </div>
-    <div class="row p-3">
-      <div class="col-lg-3 col-sm-6">
-        <mat-card>
-          <mat-card-header>
-            <mat-card-title>
-              Rector
-            </mat-card-title>
-            <mat-card-subtitle>
-              Rector, St. Xavier's School
-            </mat-card-subtitle>
-          </mat-card-header>
-          <mat-card-content>
-            <img mat-card-image src="http://0516p.info/imp%20img/rec.jpg" />
-          </mat-card-content>
-        </mat-card>
-      </div>
-      <div class="col-lg-3 col-sm-6">
-        <mat-card>
-          <mat-card-header>
-            <mat-card-title>
-              Christu Savarirajan
-            </mat-card-title>
-            <mat-card-subtitle>
-              Principal, St. Xavier's School
-            </mat-card-subtitle>
-          </mat-card-header>
-          <mat-card-content>
-            <img mat-card-image src="http://0516p.info/imp%20img/pr.jpg" />
-          </mat-card-content>
-        </mat-card>
-      </div>
-      <div class="col-lg-3 col-sm-6">
-        <mat-card>
-          <mat-card-header>
-            <mat-card-title>
-              Dr. Abhilash Nayak
-            </mat-card-title>
-            <mat-card-subtitle>
-              Regional Director, IGNOU
-            </mat-card-subtitle>
-          </mat-card-header>
-          <mat-card-content>
-            <img mat-card-image src="http://0516p.info/imp%20img/rdPatna.jpg" />
-          </mat-card-content>
-        </mat-card>
-      </div>
-      <div class="col-lg-3 col-sm-6">
-        <mat-card>
-          <mat-card-header>
-            <mat-card-title>
-              Md. Shams Raza
-            </mat-card-title>
-            <mat-card-subtitle>
-              Programme Incharge 0516P
-            </mat-card-subtitle>
-          </mat-card-header>
-          <mat-card-content>
-            <img mat-card-image src="http://0516p.info/imp%20img/sir.jpg" />
-          </mat-card-content>
-        </mat-card>
-      </div>
-    </div>
+<div fxLayout fxLayout.xs="column" class="cover-bg" fxLayoutAlign="end" fxLayoutAlign.xs="start">
+  <app-news class="m-3"></app-news>
+</div>
+<div fxLayout fxLayoutAlign="center">
+  <h3 style="padding: 16px">Prominent Persons</h3>
+</div>
+<div fxLayout fxLayout.xs="column" fxLayoutGap="16px" fxLayoutWrap class="px-3">
+  <mat-card fxFlex="25">
+    <mat-card-header>
+      <mat-card-title>
+        Rector
+      </mat-card-title>
+      <mat-card-subtitle>
+        Rector, St. Xavier's School
+      </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <img mat-card-image src="http://0516p.info/imp%20img/rec.jpg" />
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card fxFlex="25">
+    <mat-card-header>
+      <mat-card-title>
+        Christu Savarirajan
+      </mat-card-title>
+      <mat-card-subtitle>
+        Principal, St. Xavier's School
+      </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <img mat-card-image src="http://0516p.info/imp%20img/pr.jpg" />
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card fxFlex="25">
+    <mat-card-header>
+      <mat-card-title>
+        Dr. Abhilash Nayak
+      </mat-card-title>
+      <mat-card-subtitle>
+        Regional Director, IGNOU
+      </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <img mat-card-image src="http://0516p.info/imp%20img/rdPatna.jpg" />
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card fxFlex="25">
+    <mat-card-header>
+      <mat-card-title>
+        Md. Shams Raza
+      </mat-card-title>
+      <mat-card-subtitle>
+        Programme Incharge 0516P
+      </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <img mat-card-image src="http://0516p.info/imp%20img/sir.jpg" />
+    </mat-card-content>
+  </mat-card>
 </div>
