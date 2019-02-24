@@ -28,6 +28,7 @@
           routerLink="/home"
           routerLinkActive="active"
           [routerLinkActiveOptions]="{ exact: true }"
+          (click)="sidenav.close()"
           >Home</a
         >
         <a
@@ -35,6 +36,7 @@
           routerLink="/courses"
           routerLinkActive="active"
           [routerLinkActiveOptions]="{ exact: true }"
+          (click)="sidenav.close()"
           >Courses</a
         >
         <a
@@ -42,6 +44,7 @@
           routerLink="/time-table"
           routerLinkActive="active"
           [routerLinkActiveOptions]="{ exact: true }"
+          (click)="sidenav.close()"
           >Time Table</a
         >
         <a
@@ -49,6 +52,7 @@
           routerLink="/gallery"
           routerLinkActive="active"
           [routerLinkActiveOptions]="{ exact: true }"
+          (click)="sidenav.close()"
           >Gallery</a
         >
         <a
@@ -56,6 +60,7 @@
           routerLink="/about"
           routerLinkActive="active"
           [routerLinkActiveOptions]="{ exact: true }"
+          (click)="sidenav.close()"
           >About Us</a
         >
         <a
@@ -63,6 +68,7 @@
           routerLink="/contact"
           routerLinkActive="active"
           [routerLinkActiveOptions]="{ exact: true }"
+          (click)="sidenav.close()"
           >Contact</a
         >
       </mat-nav-list>
