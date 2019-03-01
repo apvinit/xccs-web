@@ -137,5 +137,10 @@
       }
     }
   },
-  "defaultProject": "xccs-web"
+  "defaultProject": "xccs-web",
+  "cli": {
+    "warnings": {
+      "versionMismatch": false
+    }
+  }
 }
