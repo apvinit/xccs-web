@@ -7,9 +7,10 @@ import { NewsComponent } from './news/news.component';
 
 import { MaterialModule } from '../material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { BannerComponent } from './banner/banner.component';
 
 @NgModule({
-  declarations: [HomeComponent, NewsComponent],
+  declarations: [HomeComponent, NewsComponent, BannerComponent],
   imports: [
     CommonModule,
     HomeRoutingModule,
