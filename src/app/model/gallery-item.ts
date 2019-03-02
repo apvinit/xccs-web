@@ -1,4 +1,5 @@
-export interface Event_ {
+export interface GalleryItem {
+  id?: string;
   title: string;
   subtitle: string;
   thumbnail?: string;

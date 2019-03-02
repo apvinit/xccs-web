@@ -15,7 +15,7 @@ import { map } from 'rxjs/operators';
 import { Info } from './model/info';
 import { Course } from './model/course';
 import { Program } from './model/program';
-import { Event_ } from './model/event';
+import { GalleryItem } from './model/gallery-item';
 import { News } from './model/news';
 import { MatSnackBar } from '@angular/material';
 
@@ -157,8 +157,8 @@ export class FirebaseService {
   }
 
   // CRUD operations for the Events
-  addEvent(event: Event_) {
-    const eventRef = this.firestore.collection<Event_>('events');
+  addEvent(event: GalleryItem) {
+    const eventRef = this.firestore.collection<GalleryItem>('events');
     eventRef
       .add(event)
       .then(docRef => console.log('Added Successfully'))
@@ -166,7 +166,7 @@ export class FirebaseService {
   }
 
   getEvents() {
-    return this.firestore.collection<Event_>('events').valueChanges();
+    return this.firestore.collection<GalleryItem>('events').valueChanges();
   }
 
   // CRUD operation methods for Latest News

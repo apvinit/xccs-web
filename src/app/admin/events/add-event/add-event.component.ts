@@ -4,7 +4,7 @@ import { finalize } from 'rxjs/operators';
 import { FirebaseService } from 'src/app/firebase.service';
 import { FormGroup, FormControl } from '@angular/forms';
 import { AngularFireUploadTask } from '@angular/fire/storage';
-import { Event_ } from '../../../model/event';
+import { GalleryItem } from '../../../model/gallery-item';
 
 @Component({
   selector: 'app-add-event',
@@ -71,7 +71,7 @@ export class AddEventComponent implements OnInit {
     this.subtitle = this.eventForm.get('subtitle').value;
     this.description = this.eventForm.get('description').value;
 
-    const event: Event_ = {
+    const event: GalleryItem = {
       title: this.title,
       subtitle: this.subtitle,
       description: this.description,
