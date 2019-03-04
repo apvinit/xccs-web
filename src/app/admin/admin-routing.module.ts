@@ -11,13 +11,17 @@ import { NewsListComponent } from './news/news-list/news-list.component';
 import { ManageTimetableComponent } from './time-table/manage-timetable/manage-timetable.component';
 import { ManageCoursesComponent } from './courses/manage-courses/manage-courses.component';
 import { ManageEventsComponent } from './events/manage-events/manage-events.component';
+import { LoginComponent } from '../shared/login/login.component';
 
 const routes: Routes = [
   {
     path: 'xccs-admin', component : AdminComponent,
     children : [
       {
-        path : '', component : DashboardComponent
+        path: 'login', component: LoginComponent
+      },
+      {
+        path : 'dashboard', component : DashboardComponent
       },
       {
         path : 'news', component : ManageNewsComponent ,
@@ -35,6 +39,9 @@ const routes: Routes = [
       },
       {
         path : 'courses', component : ManageCoursesComponent
+      },
+      {
+        path: '', redirectTo: 'dashboard', pathMatch: 'full'
       }
     ]
   }
