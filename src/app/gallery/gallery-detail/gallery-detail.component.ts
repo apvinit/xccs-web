@@ -9,6 +9,23 @@ export class GalleryDetailComponent implements OnInit {
 
   constructor() { }
 
+  public images = [
+    'https://www.w3schools.com/howto/img_forest.jpg',
+    'https://www.w3schools.com/howto/img_forest.jpg',
+    'https://www.w3schools.com/howto/img_forest.jpg',
+    'https://www.w3schools.com/howto/img_forest.jpg',
+    'https://www.w3schools.com/howto/img_forest.jpg',
+    'https://www.w3schools.com/howto/img_forest.jpg',
+    'https://www.w3schools.com/howto/img_forest.jpg',
+    'https://www.w3schools.com/howto/img_forest.jpg',
+    'https://www.w3schools.com/howto/img_forest.jpg',
+    'https://www.w3schools.com/howto/img_forest.jpg',
+    'https://www.w3schools.com/howto/img_forest.jpg',
+    'https://www.w3schools.com/howto/img_forest.jpg',
+    'https://www.w3schools.com/howto/img_forest.jpg',
+    'https://www.w3schools.com/howto/img_forest.jpg'
+  ];
+
   ngOnInit() {
   }
 

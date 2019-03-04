@@ -1,3 +1,5 @@
-<p>
-  gallery-detail works!
-</p>
+<div fxLayout="row wrap" fxLayout.lt-md="column wrap" fxLayoutGap="16px" fxLayoutAlign="space-evenly center" >
+  <div *ngFor="let image of images" ngClass.gt-sm="lg" fxLayoutAlign="center center">
+    <img src="{{ image }}" />
+  </div>
+</div>
