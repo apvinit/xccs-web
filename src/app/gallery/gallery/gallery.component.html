@@ -4,9 +4,17 @@
   mode="query"
 ></mat-progress-bar>
 
-<div fxLayout fxLayout.xs="column" fxLayoutWrap fxLayoutGap="16px" fxLayoutAlign="center">
+<div
+  fxLayout="row wrap"
+  fxLayout.lt-sm="column"
+  fxLayoutGap="16px"
+  class="py-3"
+  fxLayoutAlign="space-evenly"
+>
   <mat-card
-    class="my-4"
+    ngClass.xs="mx-3"
+    ngClass.gt-sm="mb-4"
+    ngStyle.gt-sm="width: 30%"
     *ngFor="let event of (events | async)"
   >
     <mat-card-header>
