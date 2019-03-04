@@ -5,11 +5,13 @@ import { SharedRoutingModule } from './shared-routing.module';
 import { MaterialModule } from '../material.module';
 import { FooterComponent } from './footer/footer.component';
 import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     FooterComponent,
-    ConfirmationDialogComponent
+    ConfirmationDialogComponent,
+    LoginComponent
   ],
   imports: [
     CommonModule,
@@ -18,7 +20,8 @@ import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-
   ],
   exports : [
     FooterComponent,
-    ConfirmationDialogComponent
+    ConfirmationDialogComponent,
+    LoginComponent
   ],
   entryComponents: [
     ConfirmationDialogComponent
