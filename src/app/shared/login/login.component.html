@@ -1,3 +1,16 @@
-<p>
-  login works!
-</p>
+<div fxLayout fxLayoutAlign="center" class="py-3">
+  <mat-card ngClass="lg" ngClass.lt-sm="sm" ngStyle.md="{width: 60%;}">
+    <mat-card-title>Admin Dashboard Login</mat-card-title>
+    <mat-card-content>
+    <form fxLayout="column" onsubmit="login()">
+        <mat-form-field>
+          <input matInput placeholder="Email" type="email" required/>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Password" type="password" required/>
+        </mat-form-field>
+          <button mat-raised-button type="submit" color="primary">LOGIN</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
