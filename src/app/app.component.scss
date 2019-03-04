@@ -4,7 +4,7 @@
 .menu-btn {
   outline: none;
 }
-.mat-sidenav-container {
-  z-index: -1 !important;
+.mat-elevation-z4 {
+  position: relative;
+  z-index: 2;
 }
-
