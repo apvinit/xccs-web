@@ -11,33 +11,43 @@ import { LoginComponent } from '../shared/login/login.component';
 
 const routes: Routes = [
   {
-    path: 'xccs-admin', component : AdminComponent,
-    children : [
+    path: '',
+    component: AdminComponent,
+    children: [
       {
-        path: 'login', component: LoginComponent
+        path: 'login',
+        component: LoginComponent
       },
       {
-        path : 'dashboard', component : DashboardComponent
+        path: 'dashboard',
+        component: DashboardComponent
       },
       {
-        path : 'news', component : ManageNewsComponent ,
-        children : [
+        path: 'news',
+        component: ManageNewsComponent,
+        children: [
           {
-            path : '', component : NewsListComponent
+            path: '',
+            component: NewsListComponent
           }
         ]
       },
       {
-        path : 'events', component : ManageEventsComponent
+        path: 'events',
+        component: ManageEventsComponent
       },
       {
-        path : 'timetable', component : ManageTimetableComponent
+        path: 'timetable',
+        component: ManageTimetableComponent
       },
       {
-        path : 'courses', component : ManageCoursesComponent
+        path: 'courses',
+        component: ManageCoursesComponent
       },
       {
-        path: '', redirectTo: 'dashboard', pathMatch: 'full'
+        path: '',
+        redirectTo: 'dashboard',
+        pathMatch: 'full'
       }
     ]
   }
@@ -47,4 +57,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class AdminRoutingModule { }
+export class AdminRoutingModule {}

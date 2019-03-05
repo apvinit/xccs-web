@@ -13,6 +13,9 @@ const routes: Routes = [
     path: 'contact', loadChildren: './contact/contact.module#ContactModule'
   },
   {
+    path: 'xccs-admin', loadChildren: './admin/admin.module#AdminModule'
+  },
+  {
     path : '**' , component: PageNotFoundComponent
   }
 ];

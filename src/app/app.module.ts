@@ -18,7 +18,6 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 
 // Feature Modules
 import { AboutModule } from './about/about.module';
-import { AdminModule } from './admin/admin.module';
 import { HomeModule } from './home/home.module';
 import { CoursesModule } from './courses/courses.module';
 import { TimeTableModule } from './time-table/time-table.module';
@@ -40,7 +39,6 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MaterialModule,
     FlexLayoutModule,
     AboutModule,
-    AdminModule,
     HomeModule,
     CoursesModule,
     TimeTableModule,
