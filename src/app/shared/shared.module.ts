@@ -6,14 +6,12 @@ import { SharedRoutingModule } from './shared-routing.module';
 import { MaterialModule } from '../material.module';
 import { FooterComponent } from './footer/footer.component';
 import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
-import { LoginComponent } from './login/login.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
     FooterComponent,
-    ConfirmationDialogComponent,
-    LoginComponent
+    ConfirmationDialogComponent
   ],
   imports: [
     CommonModule,
@@ -24,8 +22,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
   ],
   exports : [
     FooterComponent,
-    ConfirmationDialogComponent,
-    LoginComponent
+    ConfirmationDialogComponent
   ],
   entryComponents: [
     ConfirmationDialogComponent
