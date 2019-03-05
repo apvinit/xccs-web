@@ -22,7 +22,6 @@ import { AdminModule } from './admin/admin.module';
 import { HomeModule } from './home/home.module';
 import { CoursesModule } from './courses/courses.module';
 import { TimeTableModule } from './time-table/time-table.module';
-import { ContactModule } from './contact/contact.module';
 import { SharedModule } from './shared/shared.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
@@ -45,7 +44,6 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     HomeModule,
     CoursesModule,
     TimeTableModule,
-    ContactModule,
     SharedModule,
     AppRoutingModule
   ],

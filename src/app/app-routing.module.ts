@@ -10,6 +10,9 @@ const routes: Routes = [
     path: 'gallery', loadChildren: './gallery/gallery.module#GalleryModule'
   },
   {
+    path: 'contact', loadChildren: './contact/contact.module#ContactModule'
+  },
+  {
     path : '**' , component: PageNotFoundComponent
   }
 ];
