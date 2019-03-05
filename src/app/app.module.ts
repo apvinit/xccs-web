@@ -23,6 +23,7 @@ import { CoursesModule } from './courses/courses.module';
 import { TimeTableModule } from './time-table/time-table.module';
 import { SharedModule } from './shared/shared.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { AuthModule } from './auth/auth.module';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     CoursesModule,
     TimeTableModule,
     SharedModule,
+    AuthModule,
     AppRoutingModule
   ],
   providers: [],
