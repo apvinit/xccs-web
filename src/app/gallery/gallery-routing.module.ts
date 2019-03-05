@@ -5,7 +5,7 @@ import { GalleryDetailComponent } from './gallery-detail/gallery-detail.componen
 
 const routes: Routes = [
   {
-    path: 'gallery', component: GalleryComponent
+    path: '', component: GalleryComponent
   },
   {
     path: 'gallery/:event', component: GalleryDetailComponent

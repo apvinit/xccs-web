@@ -7,6 +7,9 @@ const routes: Routes = [
     path: '', redirectTo : '/home' , pathMatch : 'full'
   },
   {
+    path: 'gallery', loadChildren: './gallery/gallery.module#GalleryModule'
+  },
+  {
     path : '**' , component: PageNotFoundComponent
   }
 ];
