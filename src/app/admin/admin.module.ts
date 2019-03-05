@@ -18,6 +18,7 @@ import { ManageCoursesComponent } from './courses/manage-courses/manage-courses.
 import { CoursesListComponent } from './courses/courses-list/courses-list.component';
 import { ManageEventsComponent } from './events/manage-events/manage-events.component';
 import { EventsListComponent } from './events/events-list/events-list.component';
+import { AuthModule } from '../auth/auth.module';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { EventsListComponent } from './events/events-list/events-list.component'
     CommonModule,
     AdminRoutingModule,
     MaterialModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AuthModule
   ],
   entryComponents: [
     AddNewsComponent,
