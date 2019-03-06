@@ -9,9 +9,12 @@ export class AuthService {
 
   user;
 
+  public isLoggedIn;
+
   constructor(private afAuth: AngularFireAuth) {
     this.afAuth.user.subscribe((user) => {
       this.user = user;
+      this.isLoggedIn = true;
     });
    }
 
@@ -19,6 +22,7 @@ export class AuthService {
     this.afAuth.auth.signInWithEmailAndPassword(email, password).then((user) => {
         console.log(user);
         this.user = user;
+        this.isLoggedIn = true;
       }
     ).catch((error) => {
       console.log(error.code);
@@ -28,5 +32,6 @@ export class AuthService {
 
   logout() {
     this.afAuth.auth.signOut();
+    this.isLoggedIn = false;
   }
 }
