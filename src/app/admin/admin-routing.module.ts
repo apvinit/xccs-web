@@ -7,17 +7,12 @@ import { NewsListComponent } from './news/news-list/news-list.component';
 import { ManageTimetableComponent } from './time-table/manage-timetable/manage-timetable.component';
 import { ManageCoursesComponent } from './courses/manage-courses/manage-courses.component';
 import { ManageEventsComponent } from './events/manage-events/manage-events.component';
-import { LoginComponent } from '../auth/login/login.component';
 
 const routes: Routes = [
   {
     path: '',
     component: AdminComponent,
     children: [
-      {
-        path: 'login',
-        component: LoginComponent
-      },
       {
         path: 'dashboard',
         component: DashboardComponent
