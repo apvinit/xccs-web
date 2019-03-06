@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { AngularFireAuth } from '@angular/fire/auth';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -8,21 +9,22 @@ import { AngularFireAuth } from '@angular/fire/auth';
 export class AuthService {
 
   user;
+  public isLoggedIn: boolean;
 
-  public isLoggedIn;
-
-  constructor(private afAuth: AngularFireAuth) {
+  constructor(private afAuth: AngularFireAuth, private router: Router) {
     this.afAuth.user.subscribe((user) => {
-      this.user = user;
-      this.isLoggedIn = true;
+      if (user) {
+        this.user = user;
+        this.isLoggedIn = true;
+      }
     });
    }
 
   login(email: string, password: string) {
     this.afAuth.auth.signInWithEmailAndPassword(email, password).then((user) => {
-        console.log(user);
         this.user = user;
         this.isLoggedIn = true;
+        this.router.navigate(['/xccs-admin']);
       }
     ).catch((error) => {
       console.log(error.code);
