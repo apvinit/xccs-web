@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { LoginComponent } from './auth/login/login.component';
+import { AdminGuard } from './auth/admin.guard';
+import { AuthGuard } from './auth/auth.guard';
 
 const routes: Routes = [
   {
@@ -19,11 +21,13 @@ const routes: Routes = [
   },
   {
     path: 'xccs-admin',
-    loadChildren: './admin/admin.module#AdminModule'
+    loadChildren: './admin/admin.module#AdminModule',
+    canLoad: [AdminGuard]
   },
   {
     path: 'login',
-    component: LoginComponent
+    component: LoginComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: '**',
