@@ -5,22 +5,29 @@ import { LoginComponent } from './auth/login/login.component';
 
 const routes: Routes = [
   {
-    path: '', redirectTo : '/home' , pathMatch : 'full'
+    path: '',
+    redirectTo: '/home',
+    pathMatch: 'full'
   },
   {
-    path: 'gallery', loadChildren: './gallery/gallery.module#GalleryModule'
+    path: 'gallery',
+    loadChildren: './gallery/gallery.module#GalleryModule'
   },
   {
-    path: 'contact', loadChildren: './contact/contact.module#ContactModule'
+    path: 'contact',
+    loadChildren: './contact/contact.module#ContactModule'
   },
   {
-    path: 'xccs-admin', loadChildren: './admin/admin.module#AdminModule'
+    path: 'xccs-admin',
+    loadChildren: './admin/admin.module#AdminModule'
   },
   {
-    path: 'login', component: LoginComponent
+    path: 'login',
+    component: LoginComponent
   },
   {
-    path : '**' , component: PageNotFoundComponent
+    path: '**',
+    component: PageNotFoundComponent
   }
 ];
 
@@ -28,4 +35,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
