@@ -7,21 +7,21 @@
           Contact
         </mat-card-title>
         <mat-card-content>
-          <form>
+          <form action="https://formspree.io/vinaugust6@gmail.com" method="POST">
             <mat-form-field class="w-100">
-              <input matInput type="text" placeholder="Name">
+              <input matInput type="text" placeholder="Name" name="name">
             </mat-form-field>
             <br>
             <mat-form-field class="w-100">
-              <input matInput type="email" placeholder="Email">
+              <input matInput type="email" placeholder="Email" name="_replyto">
             </mat-form-field>
             <br>
             <mat-form-field class="w-100">
-              <input matInput type="text" placeholder="Subject">
+              <input matInput type="text" placeholder="Subject" name="subject">
             </mat-form-field>
             <br>
             <mat-form-field class="w-100">
-              <textarea matInput name="" id="" cols="30" rows="10" placeholder="Message"></textarea>
+              <textarea matInput name="message" id="" cols="30" rows="10" placeholder="Message"></textarea>
             </mat-form-field>
             <br>
             <button mat-raised-button class="mr-2" color="primary" type="submit">SEND</button>
