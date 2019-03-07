@@ -7,14 +7,11 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class AuthService {
-
-  user;
-  public isLoggedIn: boolean;
+  public isLoggedIn = false;
 
   constructor(private afAuth: AngularFireAuth, private router: Router) {
-    this.afAuth.user.subscribe((user) => {
-      if (user) {
-        this.user = user;
+    this.afAuth.authState.subscribe((authState) => {
+      if (authState && authState.uid) {
         this.isLoggedIn = true;
       }
     });
@@ -22,9 +19,10 @@ export class AuthService {
 
   login(email: string, password: string) {
     this.afAuth.auth.signInWithEmailAndPassword(email, password).then((user) => {
-        this.user = user;
-        this.isLoggedIn = true;
-        this.router.navigate(['/xccs-admin']);
+        if (user) {
+          this.isLoggedIn = true;
+          this.router.navigate(['/xccs-admin']);
+        }
       }
     ).catch((error) => {
       console.log(error.code);
