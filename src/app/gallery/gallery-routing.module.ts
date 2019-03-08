@@ -8,7 +8,7 @@ const routes: Routes = [
     path: '', component: GalleryComponent
   },
   {
-    path: 'gallery/:event', component: GalleryDetailComponent
+    path: ':event', component: GalleryDetailComponent
   }
 ];
 
